@@ -1,0 +1,83 @@
+@extends('layouts.base')
+
+@section('title')
+@endsection
+
+@section('meta')
+@endsection
+
+@section('content')
+    <main>
+
+        <!-- breadcrumb area start -->
+        <section class="bd-breadcrumb-area p-relative fix z-index-11">
+            <div class="bd-breadcrumb-bg-two" data-background="{{ asset('images/breadcrumb/breadcrumb-bg-2.webp') }}"></div>
+            <div class="bd-breadcrumb-wrapper p-relative">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="bd-breadcrumb style-two d-flex-center">
+                                <div class="bd-breadcrumb-content">
+                                    <h1 class="bd-breadcrumb-title text-center">Foto Qalereya</h1>
+                                    <div class="bd-breadcrumb-list">
+                                        <span><a href="index.html">HiLanguages</a></span>
+                                        <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
+                                        <span class="active">Foto Qalereya</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bd-breadcrumb-shape">
+                        <div class="shape-1"><img src="{{ asset('images/shape/breadcrumb-shape-1.webp') }}" alt="shape">
+                        </div>
+                        <div class="shape-3"><img src="{{ asset('images/shape/bulb-shape.webp') }}" alt="shape"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb area end -->
+
+        <!-- gallery area start -->
+        <section class="bd-campus-gallery-area section-space-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="bd-section-title-wrapper section-title-space text-center">
+                            <span class="bd-section-subtitle">Anılarımız çəkildi</span>
+                            <h2 class="bd-section-title">Hər Kadrda Gözəlliyi Kəşf Edin</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-30 justify-content-center">
+                    @foreach ($photoGalleries as $gallery)
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                            <div class="bd-campus-gallery-wrapper">
+                                <a href="#gallery{{ $loop->index + 1 }}" class="bd-campus-gallery-thumb">
+                                    <img src="{{ $gallery->getImageUrlAttribute() }}" alt="image">
+                                </a>
+                                <h6 class="bd-campus-gallery-title">{{ getLocalizedField($gallery, 'head') }}</h6>
+                                <div id="gallery{{ $loop->index + 1 }}" class="hidden">
+                                    @foreach ($gallery->photos as $photo)
+                                        <a href="{{ $photo->getImageUrlAttribute() }}" title="Snapshots of Campus - 01"
+                                            alt="image"></a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+                <!-- gallery-more style -->
+                <div class="bd-gallery-more-btn d-flex justify-content-center mt-50">
+
+                </div>
+                <!-- gallery-more style end -->
+            </div>
+        </section>
+        <!-- gallery area end -->
+
+
+
+    </main>
+@endsection
