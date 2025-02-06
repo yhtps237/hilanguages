@@ -20,4 +20,6 @@ Route::group([
     $router->resource('blogs', BlogController::class);
     $router->resource('our-teams', OurTeamController::class);
     $router->resource('certificates', CertificateController::class);
+    $router->resource('courses', CourseController::class);
+    $router->resource('students', StudentController::class);
 });

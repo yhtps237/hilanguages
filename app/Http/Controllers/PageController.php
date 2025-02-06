@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Course;
 use App\Models\Faq;
 use App\Models\OurTeam;
 use App\Models\PhotoGallery;
+use App\Models\Student;
 use App\Models\VideoGallery;
 use Illuminate\Http\Request;
 
@@ -41,6 +43,26 @@ class PageController extends Controller
         $latestBlogs = Blog::latest()->take(5)->get();
 
         return view('blog_detail', compact('blog', 'latestBlogs'));
+    }
+
+
+    public function course()
+    {
+        $courses = Course::orderBy('id', 'desc')->get();
+
+        return view('course', compact('courses'));
+    }
+
+    public function courseDetail($slug)
+    {
+        $locale = app()->getLocale(); // Get current language
+
+        // Determine the correct column based on language
+        $column = "slug_{$locale}";
+
+        $course = Course::where($column, $slug)->firstOrFail();
+
+        return view('course_detail', compact('course'));
     }
 
     public function faq()
@@ -92,5 +114,11 @@ class PageController extends Controller
     public function career()
     {
         return view('career');
+    }
+
+    public function students()
+    {
+        $students = Student::all();
+        return view('students', compact('students'));
     }
 }

@@ -9,4 +9,7 @@ return [
     'contact' => 'elaqe',
     'photo-gallery' => 'foto-qalereya',
     'video-gallery' => 'video-qalereya',
+    'courses' => 'courses',
+    'students' => 'students',
+
 ];

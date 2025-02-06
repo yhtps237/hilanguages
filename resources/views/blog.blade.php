@@ -57,7 +57,7 @@ $languageCode = app()->getLocale();
                                 <div class="bd-blog-thumb">
                                     <a
                                         href="{{ localized_route('blogDetail', ['slug' => $blog->{'slug_' . app()->getLocale()}], app()->getLocale()) }}"><img
-                                            src="{{ asset('images/banner/baner.webp') }}" alt="image"></a>
+                                            src="{{ $blog->getImageUrlAttribute() }}" alt="image"></a>
                                 </div>
                                 <div class="bd-blog-content">
                                     <div class="bd-blog-meta-list">

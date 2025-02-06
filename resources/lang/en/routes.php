@@ -9,4 +9,7 @@ return [
     'contact' => 'contact',
     'photo-gallery' => 'photo-gallery',
     'video-gallery' => 'video-gallery',
+    'courses' => 'courses',
+    'students' => 'students',
+
 ];
