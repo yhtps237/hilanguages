@@ -103,9 +103,11 @@ return [
 
     'Head_az'                => 'Başlıq (az)',
     'Head_en'                => 'Başlıq (en)',
+    'Head_ru'                => 'Başlıq (ru)',
 
     'Content_az'                => 'Məlumat (az)',
     'Content_en'                => 'Məlumat (en)',
+    'Content_ru'                => 'Məlumat (ru)',
 
     'Image'                => 'Şəkil',
     'Image1'                => 'Şəkil (kiçik)',
@@ -113,6 +115,7 @@ return [
 
     'Description_az'                => 'Açıqlama (az)',
     'Description_en'                => 'Açıqlama (en)',
+    'Description_ru'                => 'Açıqlama (ru)',
 
     'Keyword'                => 'Açar söz',
     'Date'                => 'Tarix',
@@ -122,6 +125,11 @@ return [
     'Review'                => 'Müştəri fikirləri',
     'Name_az'                => 'Ad (az)',
     'Name_en'                => 'Ad (en)',
+    'Name_ru'                => 'Ad (ru)',
+
+    'Position_az'                => 'Vəzifə (az)',
+    'Position_en'                => 'Vəzifə (en)',
+    'Position_ru'                => 'Vəzifə (ru)',
 
     'PhotoGallery'                => 'Foto qalereya',
     'Alternative'                => 'Alternativ',

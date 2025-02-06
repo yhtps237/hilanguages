@@ -53,6 +53,7 @@ class OurTeamObserver
 
         $ourTeam->slug_az = $this->generateSlug($ourTeam->name_az);
         $ourTeam->slug_en = $this->generateSlug($ourTeam->name_en);
+        $ourTeam->slug_ru = $this->generateSlug($ourTeam->name_ru);
     }
 
     private function generateSlug($head)

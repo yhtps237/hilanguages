@@ -27,3 +27,4 @@ Route::multilingual('/blog/{slug}', [PageController::class, 'blogDetail'])->name
 Route::multilingual('/photo-gallery', [PageController::class, 'photoGallery'])->name('photoGallery');
 Route::multilingual('/video-gallery', [PageController::class, 'videoGallery'])->name('videoGallery');
 Route::multilingual('/contact', [PageController::class, 'contact'])->name('contact');
+Route::multilingual('/career', [PageController::class, 'career'])->name('career');

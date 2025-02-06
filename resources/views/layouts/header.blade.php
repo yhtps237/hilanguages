@@ -105,7 +105,7 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="karyera.html">Vakansiya</a>
+                            <a href="{{ localized_route('career', [], app()->getLocale()) }}">Vakansiya</a>
                         </li>
                     </ul>
                 </nav>

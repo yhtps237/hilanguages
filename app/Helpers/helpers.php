@@ -112,9 +112,10 @@ if (!function_exists('pre_process_counter')) {
 }
 
 if (!function_exists('getLocalizedField')) {
-
     function getLocalizedField($model, $field)
     {
-        return app()->getLocale() == 'az' ? $model[$field . '_az'] : $model[$field . '_en'];
+        $locale = app()->getLocale();
+
+        return $model[$field . '_' . ($locale === 'az' ? 'az' : ($locale === 'ru' ? 'ru' : 'en'))] ?? null;
     }
 }

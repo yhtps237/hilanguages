@@ -115,9 +115,11 @@ return [
 
     'Head_az'                => 'Head (az)',
     'Head_en'                => 'Head (en)',
+    'Head_ru'                => 'Head (ru)',
 
     'Content_az'                => 'Content (az)',
     'Content_en'                => 'Content (en)',
+    'Content_ru'                => 'Content (ru)',
 
     'Image'                => 'Image',
     'Image1'                => 'Image (small)',
@@ -125,6 +127,7 @@ return [
 
     'Description_az'                => 'Description (az)',
     'Description_en'                => 'Description (en)',
+    'Description_ru'                => 'Description (ru)',
 
     'Keyword'                => 'Keyword',
     'Date'                => 'Date',
@@ -134,6 +137,11 @@ return [
     'Review'                => 'Reviews',
     'Name_az'                => 'Name (az)',
     'Name_en'                => 'Name (en)',
+    'Name_ru'                => 'Name (ru)',
+
+    'Position_az'                => 'Position (az)',
+    'Position_en'                => 'Position (en)',
+    'Position_ru'                => 'Position (ru)',
 
     'PhotoGallery'                => 'Photo Gallery',
     'Alternative'                => 'Alternative',

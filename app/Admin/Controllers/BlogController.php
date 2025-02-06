@@ -31,8 +31,9 @@ class BlogController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('head_az', __('admin.Head_az'));
         $grid->column('head_en', __('admin.Head_en'));
-        $grid->column('content_az', __('admin.Content_az'));
-        $grid->column('content_en', __('admin.Content_en'));
+        $grid->column('head_ru', __('admin.Head_ru'));
+        // $grid->column('content_az', __('admin.Content_az'));
+        // $grid->column('content_en', __('admin.Content_en'));
         $grid->column('image', __('admin.Image'))->display(function ($image) {
             $imageUrl = asset('storage/' . $image);
             $html = '<div style="text-align: center;">
@@ -59,8 +60,10 @@ class BlogController extends AdminController
         $show->field('id', __('Id'));
         $show->field('head_az', __('admin.Head_az'));
         $show->field('head_en', __('admin.Head_en'));
+        $show->field('head_ru', __('admin.Head_ru'));
         $show->field('content_az', __('admin.Content_az'));
         $show->field('content_en', __('admin.Content_en'));
+        $show->field('content_ru', __('admin.Content_ru'));
         $show->field('image', __('admin.Image'))->unescape()->as(function ($image) {
             $imageUrl = asset('storage/' . $image);
             $html = '<a href="' . $imageUrl . '" target="_blank">
@@ -91,8 +94,10 @@ class BlogController extends AdminController
 
         $form->text('head_az', __('admin.Head_az'))->required();
         $form->text('head_en', __('admin.Head_en'))->required();
+        $form->text('head_ru', __('admin.Head_ru'))->required();
         $form->ckeditor('content_az', __('admin.Content_az'))->required();
         $form->ckeditor('content_en', __('admin.Content_en'))->required();
+        $form->ckeditor('content_ru', __('admin.Content_ru'))->required();
         $form->image('image', __('admin.Image'))
             ->removable()
             ->rules(request()->isMethod('post') ? 'required|mimes:jpeg,png,jpg,gif,webp|max:500' : 'nullable|mimes:jpeg,png,jpg,gif,webp|max:500', [
@@ -102,6 +107,7 @@ class BlogController extends AdminController
             ]);
         $form->text('description_az', __('admin.Description_az'))->required();
         $form->text('description_en', __('admin.Description_en'))->required();
+        $form->text('description_ru', __('admin.Description_ru'))->required();
         $form->text('keyword', __('admin.Keyword'))->required();
         $form->date('date', __('admin.Date'))->default(date('Y-m-d'))->required();
 

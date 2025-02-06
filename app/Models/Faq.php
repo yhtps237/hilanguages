@@ -15,7 +15,9 @@ class Faq extends Model
         'type',
         'head_az',
         'head_en',
+        'head_ru',
         'content_az',
         'content_en',
+        'content_ru',
     ];
 }

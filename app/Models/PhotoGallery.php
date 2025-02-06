@@ -12,6 +12,9 @@ class PhotoGallery extends Model
     protected $table = 'photo_gallery';
 
     protected $fillable = [
+        'head_az',
+        'head_en',
+        'head_ru',
         'image',
         'alternative',
     ];

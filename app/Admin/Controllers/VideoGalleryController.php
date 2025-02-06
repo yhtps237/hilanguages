@@ -30,6 +30,7 @@ class VideoGalleryController extends AdminController
         $grid->column('url', __('Url'));
         $grid->column('head_az', __('admin.Head_az'));
         $grid->column('head_en', __('admin.Head_en'));
+        $grid->column('head_ru', __('admin.Head_ru'));
         $grid->column('created_at', __('admin.Created_at'));
         $grid->column('updated_at', __('admin.Updated_at'));
 
@@ -50,6 +51,7 @@ class VideoGalleryController extends AdminController
         $show->field('url', __('Url'));
         $show->field('head_az', __('admin.Head_az'));
         $show->field('head_en', __('admin.Head_en'));
+        $show->field('head_ru', __('admin.Head_ru'));
         $show->field('created_at', __('admin.Created_at'));
         $show->field('updated_at', __('admin.Updated_at'));
 
@@ -66,8 +68,9 @@ class VideoGalleryController extends AdminController
         $form = new Form(new VideoGallery());
 
         $form->text('url', __('Url'));
-        $form->text('head_az', __('Head az'));
+        $form->text('head_az', __('admin.Head_az'));
         $form->text('head_en', __('admin.Head_en'));
+        $form->text('head_ru', __('admin.Head_ru'));
 
         return $form;
     }

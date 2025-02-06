@@ -15,14 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('head_az')->nullable(false);
             $table->string('head_en')->nullable(false);
+            $table->string('head_ru')->nullable(false);
             $table->text('content_az')->nullable(false);
             $table->text('content_en')->nullable(false);
+            $table->text('content_ru')->nullable(false);
             $table->string('image')->nullable(false);
             $table->string('description_az')->nullable(false);
             $table->string('description_en')->nullable(false);
+            $table->string('description_ru')->nullable(false);
             $table->string('keyword')->nullable(false);
             $table->string('slug_az')->nullable(false);
             $table->string('slug_en')->nullable(false);
+            $table->string('slug_ru')->nullable(false);
             $table->timestamps();
         });
     }

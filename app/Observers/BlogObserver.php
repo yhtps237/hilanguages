@@ -52,6 +52,7 @@ class BlogObserver
 
         $blog->slug_az = $this->generateSlug($blog->head_az);
         $blog->slug_en = $this->generateSlug($blog->head_en);
+        $blog->slug_ru = $this->generateSlug($blog->head_ru);
     }
 
     private function generateSlug($head)

@@ -52,6 +52,7 @@ class ServiceObserver
 
         $service->slug_az = $this->generateSlug($service->head_az);
         $service->slug_en = $this->generateSlug($service->head_en);
+        $service->slug_ru = $this->generateSlug($service->head_ru);
     }
 
     private function generateSlug($head)

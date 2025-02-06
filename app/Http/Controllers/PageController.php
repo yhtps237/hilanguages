@@ -88,4 +88,9 @@ class PageController extends Controller
     {
         return view('contact');
     }
+
+    public function career()
+    {
+        return view('career');
+    }
 }

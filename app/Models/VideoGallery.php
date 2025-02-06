@@ -16,6 +16,7 @@ class VideoGallery extends Model
         'url',
         'head_az',
         'head_en',
+        'head_ru',
     ];
 
     public function getImageUrlAttribute()

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('head_az')->nullable(false);
             $table->string('head_en')->nullable(false);
+            $table->string('head_ru')->nullable(false);
             $table->string('image')->nullable(false);
             $table->string('alternative')->nullable(false);
             $table->timestamps();

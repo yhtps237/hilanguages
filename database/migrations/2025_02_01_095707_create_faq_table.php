@@ -16,8 +16,10 @@ return new class extends Migration
             $table->enum('type', ['Ümumi suallar', 'Ödənişlər'])->nullable(false);
             $table->text('head_az')->nullable(false);
             $table->text('head_en')->nullable(false);
+            $table->text('head_ru')->nullable(false);
             $table->text('content_az')->nullable(false);
             $table->text('content_en')->nullable(false);
+            $table->text('content_ru')->nullable(false);
             $table->timestamps();
         });
     }

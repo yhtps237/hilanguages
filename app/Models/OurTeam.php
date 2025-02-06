@@ -14,12 +14,17 @@ class OurTeam extends Model
     protected $fillable = [
         'name_az',
         'name_en',
+        'name_ru',
         'position_az',
         'position_en',
+        'position_ru',
         'image',
-        'about',
+        'about_az',
+        'about_en',
+        'about_ru',
         'slug_az',
         'slug_en',
+        'slug_ru',
     ];
 
     public function certificates()

@@ -31,6 +31,7 @@ class PhotoGalleryController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('head_az', __('admin.Head_az'));
         $grid->column('head_en', __('admin.Head_en'));
+        $grid->column('head_ru', __('admin.Head_ru'));
         $grid->column('image', __('admin.Image'))->display(function ($image) {
             $imageUrl = asset('storage/' . $image);
             $html = '<div style="text-align: center;">
@@ -60,6 +61,7 @@ class PhotoGalleryController extends AdminController
         $show->field('id', __('Id'));
         $show->column('head_az', __('admin.Head_az'));
         $show->column('head_en', __('admin.Head_en'));
+        $show->column('head_ru', __('admin.Head_ru'));
         $show->field('image', __('admin.Image'))->unescape()->as(function ($image) {
             $imageUrl = asset('storage/' . $image);
             $html = '<a href="' . $imageUrl . '" target="_blank">
@@ -85,6 +87,7 @@ class PhotoGalleryController extends AdminController
 
         $form->text('head_az', __('admin.Head_az'));
         $form->text('head_en', __('admin.Head_en'));
+        $form->text('head_ru', __('admin.Head_ru'));
         $form->image('image', __('admin.Image'))
             ->removable()
             ->rules(request()->isMethod('post') ? 'required|mimes:jpeg,png,jpg,gif,webp|max:500' : 'nullable|mimes:jpeg,png,jpg,gif,webp|max:500', [

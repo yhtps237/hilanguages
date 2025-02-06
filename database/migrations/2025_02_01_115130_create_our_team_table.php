@@ -15,12 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('name_az');
             $table->string('name_en');
+            $table->string('name_ru');
             $table->string('position_az');
             $table->string('position_en');
+            $table->string('position_ru');
             $table->string('image');
-            $table->text('about');
+            $table->text('about_az');
+            $table->text('about_en');
+            $table->text('about_ru');
             $table->string('slug_az');
             $table->string('slug_en');
+            $table->string('slug_ru');
             $table->timestamps();
         });
     }
