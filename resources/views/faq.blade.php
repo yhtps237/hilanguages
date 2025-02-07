@@ -20,7 +20,7 @@
                                 <div class="bd-breadcrumb-content">
                                     <h1 class="bd-breadcrumb-title text-center">FAQ</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="index.html">HiLanguages</a></span>
+                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
                                         <span class="active">FAQ</span>
 

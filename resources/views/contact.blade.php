@@ -18,7 +18,7 @@
                             <div class="bd-breadcrumb style-two">
                                 <div class="bd-breadcrumb-content">
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="index.html">HiLanguages</a></span>
+                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-solid fa-angle-right"></i></span>
                                         <span class="active">Əlaqə</span>
                                     </div>
