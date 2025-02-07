@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Blog;
+use App\Models\Course;
 use App\Models\OurTeam;
 use App\Models\Service;
 use App\Observers\BlogObserver;
+use App\Observers\CourseObserver;
 use App\Observers\OurTeamObserver;
 use App\Observers\ServiceObserver;
 use OpenAdmin\Admin\Config\Config;
@@ -29,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Blog::observe(BlogObserver::class);
         Service::observe(ServiceObserver::class);
         OurTeam::observe(OurTeamObserver::class);
+        Course::observe(CourseObserver::class);
 
 
         // Config::load();

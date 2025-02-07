@@ -36,7 +36,7 @@
                 </div>
                 <div class="bd-header-category d-none d-lg-block">
                     <div class="bd-category-btn">
-                        <i class="fa-solid fa-grid"></i> Kateqoriya
+                        <i class="fa-solid fa-grid"></i> {{ __('messages.menu_item1') }}
                     </div>
                     <div class="bd-category-dropdown">
                         <nav>
@@ -69,28 +69,27 @@
                 <nav class="main-menu bd-mobile-menu-active d-none d-xl-block">
                     <ul>
                         <li class="menu-item-has-children">
-                            <a href="index.html">Ana səhifə</a>
+                            <a
+                                href="{{ localized_route('course', [], app()->getLocale()) }}">{{ __('messages.menu_item2') }}</a>
                             <ul class="submenu last-children">
                                 <li>
-                                    <a href="{{ localized_route('about', [], app()->getLocale()) }}">Haqqımızda</a>
+                                    <a
+                                        href="{{ localized_route('about', [], app()->getLocale()) }}">{{ __('messages.menu_item2_1') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ localized_route('faq', [], app()->getLocale()) }}">FAQ</a>
+                                    <a
+                                        href="{{ localized_route('faq', [], app()->getLocale()) }}">{{ __('messages.menu_item2_2') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ localized_route('ourTeam', [], app()->getLocale()) }}">Komandamız</a>
+                                    <a
+                                        href="{{ localized_route('ourTeam', [], app()->getLocale()) }}">{{ __('messages.menu_item2_3') }}</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="courses.html">Kurslar</a>
+                            <a href="{{ localized_route('course', [], app()->getLocale()) }}">Kurslar</a>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="{{ localized_route('blog', [], app()->getLocale()) }}">Xəbərlər</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                            <a href="{{ localized_route('contact', [], app()->getLocale()) }}">Əlaqə</a>
-                        </li>
+
                         <li class="menu-item-has-children">
                             <a href="#">Media</a>
                             <ul class="submenu last-children">
@@ -102,14 +101,42 @@
                                     <a href="{{ localized_route('videoGallery', [], app()->getLocale()) }}">Video
                                         Qalereya</a>
                                 </li>
+                                <li>
+                                    <a href="{{ localized_route('blog', [], app()->getLocale()) }}">Xəbərlər</a>
+                                </li>
                             </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Nəticələrimiz</a>
+                            <ul class="submenu last-children">
+                                <li>
+                                    <a href="{{ localized_route('students', [], app()->getLocale()) }}">Tələbələr</a>
+                                </li>
+                                <li>
+                                    <a href="videogallery.html">Yorumlar</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="{{ localized_route('contact', [], app()->getLocale()) }}">Əlaqə</a>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="{{ localized_route('career', [], app()->getLocale()) }}">Vakansiya</a>
                         </li>
+                        <li class="menu-item-has-children language-selector">
+                            <a href="#" id="selected-lang">Az</a>
+                            <ul class="submenu">
+                                <li><a href="{{ current_route('az') }}">Az</a></li>
+                                <li><a href="{{ current_route('en') }}">En</a></li>
+                                <li><a href="{{ current_route('ru') }}">Rus</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
+
+
             <div class="bd-header-right">
                 <div class="bd-header-sign-btn">
                     <a class="bd-btn btn-outline-primary h-40px" href="sign-in.html">Bilet al</a>

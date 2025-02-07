@@ -24,7 +24,10 @@ Route::multilingual('/our-team', [PageController::class, 'ourTeam'])->name('ourT
 Route::multilingual('/our-team/{slug}', [PageController::class, 'ourTeamDetail'])->name('ourTeamDetail');
 Route::multilingual('/blog', [PageController::class, 'blog'])->name('blog');
 Route::multilingual('/blog/{slug}', [PageController::class, 'blogDetail'])->name('blogDetail');
+Route::multilingual('/courses', [PageController::class, 'course'])->name('course');
+Route::multilingual('/courses/{slug}', [PageController::class, 'courseDetail'])->name('courseDetail');
 Route::multilingual('/photo-gallery', [PageController::class, 'photoGallery'])->name('photoGallery');
 Route::multilingual('/video-gallery', [PageController::class, 'videoGallery'])->name('videoGallery');
 Route::multilingual('/contact', [PageController::class, 'contact'])->name('contact');
 Route::multilingual('/career', [PageController::class, 'career'])->name('career');
+Route::multilingual('/students', [PageController::class, 'students'])->name('students');

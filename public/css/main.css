@@ -19275,6 +19275,165 @@ only screen and (min-width: 576px) and (max-width: 767px),
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 }
+/*  4.18 History css
+/*----------------------------------------*/
+.bd-history-thumb img {
+    border-radius: 8px;
+  }
+  .bd-history-of-university {
+    margin-left: 30px;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-of-university {
+      margin-left: 0;
+    }
+  }
+  .bd-history-of-university p {
+    font-size: 20px;
+    color: var(--bd-theme-black);
+    color: var(--bd-taxonomy-color);
+    line-height: 30px;
+  }
+  .bd-history-box .thumb img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .bd-history-box .bd-history-box-content {
+    background-color: var(--primary-rgb-05);
+    padding: 30px 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .bd-history-centuries-list {
+    margin-left: 60px;
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+    .bd-history-centuries-list {
+      margin-left: 30px;
+    }
+  }
+  @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-centuries-list {
+      margin-left: 0;
+    }
+  }
+  .bd-history-centuries-list ul li {
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--bd-border-primary);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    color: var(--bd-theme-black);
+  }
+  .bd-history-timeline {
+    position: relative;
+  }
+  .bd-history-timeline::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--bd-border-primary);
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-timeline::before {
+      display: none;
+    }
+  }
+  .bd-history-timeline-single {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+    .bd-history-timeline-single {
+      gap: 50px;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-timeline-single {
+      gap: 30px;
+      flex-direction: column;
+    }
+  }
+  .bd-history-timeline-single:not(:last-child) {
+    margin-bottom: 60px;
+  }
+  .bd-history-timeline-single:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-timeline-single:nth-child(2n) {
+      flex-direction: column;
+    }
+  }
+  .bd-history-timeline-thumb {
+    width: 50%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-timeline-thumb {
+      width: 100%;
+    }
+  }
+  .bd-history-timeline-thumb img {
+    border-radius: 8px;
+  }
+  .bd-history-timeline-content {
+    width: 50%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+    .bd-history-timeline-content {
+      width: 100%;
+    }
+  }
+  .bd-history-timeline-content .title {
+    margin-left: 30px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .bd-history-timeline-content .title::before {
+    position: absolute;
+    content: "";
+    background-color: var(--bd-white);
+    border: 1px solid var(--bd-danger);
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .bd-history-timeline-content .title::after {
+    position: absolute;
+    content: "";
+    background-color: #df072e;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    left: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .bd-history-timeline-content .bd-history-timeline-desc {
+    color: var(--bd-theme-black);
+  }
+  .bd-history-timeline-content ul li {
+    list-style: none;
+    color: var(--bd-theme-black);
+  }
+  .bd-history-timeline-content ul li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .bd-history-timeline-content ul li span {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
 
 
 /* rotate infinite animation */

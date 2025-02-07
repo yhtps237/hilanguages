@@ -103,9 +103,9 @@ class OurTeamController extends AdminController
                 'mimes' => 'Yalnız JPEG, PNG, JPG və GIF formatları qəbul edilir.',
                 'max' => 'Şəkil 500KB-dan böyük ola bilməz.',
             ]);
-        $form->ckeditor('about_az', __('About_az'))->required();
-        $form->ckeditor('about_en', __('About_en'))->required();
-        $form->ckeditor('about_ru', __('About_ru'))->required();
+        $form->ckeditor('about_az', __('admin.About_az'))->required();
+        $form->ckeditor('about_en', __('admin.About_en'))->required();
+        $form->ckeditor('about_ru', __('admin.About_ru'))->required();
 
         $form->hasMany('certificates', 'certificates', function (Form\NestedForm $form) {
             $form->image('image', __('admin.Image'))
