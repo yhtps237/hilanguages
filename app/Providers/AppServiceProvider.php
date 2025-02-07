@@ -31,6 +31,6 @@ class AppServiceProvider extends ServiceProvider
         OurTeam::observe(OurTeamObserver::class);
 
 
-        Config::load();
+        // Config::load();
     }
 }
