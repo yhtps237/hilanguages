@@ -6,6 +6,7 @@ return [
     'project_title_small' => 'Hi Languages <span class="text-primary"> Курсы</span> английского языка',
     'more' => 'Подробнее',
     'certificates' => 'Сертификаты',
+    "success" => "Ваша заявка успешно отправлена.",
 
     // header
     'menu_item1' => 'Категория',

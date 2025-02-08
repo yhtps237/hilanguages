@@ -7,6 +7,7 @@ return [
     'project_title_small' => 'Hi Languages <span class="text-primary"> Kursları</span> İngilis dili kursları',
     'more' => 'Ətraflı',
     'certificates' => 'Sertifikatlar',
+    'success' => 'Müraciətiniz uğurla göndərildi.',
 
     // header
     'menu_item1' => 'Kateqoriya',
@@ -177,7 +178,7 @@ return [
     'contac_page_form_topic' => 'Mövzu',
     'contac_page_form_note' => 'Qeyd',
     'contac_page_form_submit' => 'Məlumatların düzgünlüyünü təsdiq edirəm.',
-    'contac_page_form_send' => 'Gönər',
+    'contac_page_form_send' => 'Göndər',
     'contact_page_address' => 'Ünvanımız',
     'contact_page_address2' => 'Ofisimiz',
     'address' => 'Ünvan',

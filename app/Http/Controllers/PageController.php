@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CareerMail;
 use App\Models\Blog;
 use App\Models\CommentVideo;
 use App\Models\Course;
@@ -11,7 +12,9 @@ use App\Models\PhotoGallery;
 use App\Models\Student;
 use App\Models\VideoGallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
 
 class PageController extends Controller
 {
@@ -121,6 +124,64 @@ class PageController extends Controller
         return view('contact');
     }
 
+
+    public function sendEmail(Request $request)
+    {
+        $messages = [
+            'name.required' => 'Ad mütləqdir.',
+            'name.string' => 'Ad yalnız hərflərdən ibarət olmalıdır.',
+            'name.max' => 'Ad 255 simvoldan çox ola bilməz.',
+
+            'email.required' => 'E-poçt mütləqdir.',
+            'email.email' => 'Düzgün e-poçt ünvanı daxil edin.',
+            'email.max' => 'E-poçt 255 simvoldan çox ola bilməz.',
+
+            'phone.required' => 'Telefon nömrəsi mütləqdir.',
+            'phone.string' => 'Telefon nömrəsi düzgün formatda olmalıdır.',
+            'phone.max' => 'Telefon nömrəsi 15 simvoldan çox ola bilməz.',
+
+            'fileUpload.required' => 'Fayl yükləmək mütləqdir.',
+            'fileUpload.file' => 'Fayl düzgün olmalıdır.',
+            'fileUpload.mimes' => 'Yalnız PDF, DOC və DOCX faylları qəbul edilir.',
+            'fileUpload.max' => 'Fayl 2MB-dan böyük ola bilməz.',
+
+            'note.required' => 'Qeyd mütləqdir.',
+            'note.string' => 'Qeyd düzgün formatda olmalıdır.',
+            'note.max' => 'Qeyd 500 simvoldan çox ola bilməz.',
+        ];
+
+        // Define validation rules
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15',
+            'fileUpload' => 'required|file|mimes:pdf,doc,docx|max:2048', // only pdf, doc, docx files allowed
+            'note' => 'required|string|max:500',
+        ], $messages);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Handle the file upload
+        $filePath = null;
+        if ($request->hasFile('fileUpload')) {
+            $filePath = $request->file('fileUpload')->store('career_files', 'public');
+        }
+
+        // Here you can save the form data to your database, for example, if you have a 'career_forms' table
+
+        // Send an email (optional)
+        Mail::to('ramil.s@ndu.edu.az')->send(new CareerMail($request->all(), $filePath));
+
+        // Respond with success message
+        // return response()->json(['message' => 'Your form has been submitted successfully!']);
+        return back()->with('success',  __('messages.success'));
+    }
+
+
+
     public function career()
     {
         return view('career');
@@ -165,12 +226,6 @@ class PageController extends Controller
             ]);
         });
         // Dynamic blog URLs
-        // $blogUrls = Blog::all()->flatMap(function ($blog) use ($baseUrl, $languages) {
-        //     return collect($languages)->map(fn($lang) => [
-        //         'loc' => "{$baseUrl}/{$lang}/blog/" . ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru)),
-        //         'lastmod' => $blog->updated_at->toAtomString(),
-        //     ]);
-        // });
         $blogUrls = Blog::all()->flatMap(function ($blog) use ($languages) {
             return collect($languages)->map(fn($lang) => [
                 'loc' => localized_route('blogDetail', ['slug' => ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru))], $lang),
@@ -194,12 +249,6 @@ class PageController extends Controller
                 'lastmod' => $course->updated_at->toAtomString(),
             ]);
         });
-
-        // Merge all URLs
-        // $allUrls = $staticUrls->merge($blogUrls)->merge($ourTeamUrls)->merge($serviceUrls);
-
-        // return Response::make(view('sitemap', compact('allUrls')), 200, [
-        //     'Content-Type' => 'application/xml',
         return Response::make(view('sitemap', compact('staticUrls', 'blogUrls', 'ourTeamUrls', 'courseUrls')), 200, [
             'Content-Type' => 'application/xml',
         ]);

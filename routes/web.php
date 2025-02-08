@@ -30,6 +30,7 @@ Route::multilingual('/photo-gallery', [PageController::class, 'photoGallery'])->
 Route::multilingual('/video-gallery', [PageController::class, 'videoGallery'])->name('videoGallery');
 Route::multilingual('/contact', [PageController::class, 'contact'])->name('contact');
 Route::multilingual('/career', [PageController::class, 'career'])->name('career');
+Route::post('/send-email', [PageController::class, 'sendEmail'])->name('career.submit');
 Route::multilingual('/students', [PageController::class, 'students'])->name('students');
 Route::multilingual('/comments', [PageController::class, 'comments'])->name('comments');
 Route::multilingual('/register', [PageController::class, 'register'])->name('register');

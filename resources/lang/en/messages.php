@@ -6,6 +6,7 @@ return [
     'project_title_small' => 'Hi Languages <span class="text-primary"> Courses</span> English Language Courses',
     'more' => 'More',
     'certificates' => 'Certificates',
+    "success" => "Your application has been successfully submitted.",
 
     // header
     'menu_item1' => 'Category',

@@ -73,16 +73,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <form id="whatsappForm">
+                            @if (session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form id="whatsappForm" action="{{ route('career.submit') }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
                                 <div class="row g-30 bd-form-setup-content" id="formStepOne">
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="parentName">{{ __('messages.career_page_form_name') }}
+                                                <label for="name">{{ __('messages.career_page_form_name') }}
                                                     <span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <input name="parentName" id="parentName" type="text"
+                                                <input name="name" id="name" type="text"
                                                     placeholder="{{ __('messages.career_page_form_name') }}" required>
                                             </div>
                                         </div>
@@ -133,7 +151,7 @@
                                                     <span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <textarea id="note" rows="2" placeholder="{{ __('messages.career_page_form_note') }}"></textarea>
+                                                <textarea id="note" rows="2" name="note" placeholder="{{ __('messages.career_page_form_note') }}"></textarea>
                                             </div>
                                         </div>
                                     </div>

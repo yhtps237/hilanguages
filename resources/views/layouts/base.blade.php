@@ -74,6 +74,8 @@
     <script src="{{ asset('js/plugins/apexcharts.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/pages/slider.js') }}"></script>
+
+    @yield('custom-js')
 </body>
 
 </html>
