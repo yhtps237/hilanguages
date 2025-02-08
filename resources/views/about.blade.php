@@ -20,7 +20,7 @@
                                         <span><a
                                                 href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-solid fa-angle-right"></i></span>
-                                        <span class="active">Haqqımızda</span>
+                                        <span class="active">{{ __('messages.menu_item2_1') }}</span>
                                     </div>
 
                                 </div>
@@ -38,9 +38,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="bd-section-wrapper section-title-space text-center">
-                            <span class="bd-section-subtitle">Bizim Missiyamız & Vizyonumuz</span>
-                            <h2 class="bd-section-title mb-20">Təhsilin Gələcəyinə Rəhbərlik edirik <span
-                                    class="text-primary">HiLanguage</span></h2>
+                            <span class="bd-section-subtitle">{{ __('messages.about_page_title') }}</span>
+                            <h2 class="bd-section-title mb-20">{!! __('messages.about_page_subtitle') !!}</h2>
                         </div>
                     </div>
                 </div>
@@ -54,18 +53,12 @@
                     </div>
                     <div class="col-xl-7">
                         <div class="bd-mission-vision-wrapper mb-20">
-                            <h3 class="bd-mission-vision-title">Bizim Missiyamız</h3>
-                            <p class="bd-mission-vision-desc"> <strong>HiLanguages</strong> olaraq, missiyamız tələbələri
-                                sürətlə dəyişən dünyada uğur qazanmaq üçün lazım olan bilik və bacarıqlarla gücləndirməkdir.
-                                Biz marağı, innovasiyanı və mükəmməlliyi təşviq edən öyrənmə mühiti yaratmağa sadiqik.</p>
+                            <h3 class="bd-mission-vision-title">{{ __('messages.about_page_mission_title') }}</h3>
+                            <p class="bd-mission-vision-desc">{!! __('messages.about_page_mission_desc') !!}</p>
                         </div>
                         <div class="bd-mission-vision-wrapper">
-                            <h3 class="bd-mission-vision-title">Bizim Vizyonumuz</h3>
-                            <p class="bd-mission-vision-desc">Biz <strong>HiLanguages</strong>-ni qlobal təhsil lideri kimi
-                                görürük, gələcəyin düşünənlərini, yaradıcılarını və liderlərini formalaşdırmaq üçün
-                                çalışırıq.
-                                Məqsədimiz tələbələrin tam potensialına çatmasını təmin edəcək müasir öyrənmə təcrübələri
-                                təqdim etmək və onların cəmiyyətə müsbət təsir etməsinə kömək etməkdir.</p>
+                            <h3 class="bd-mission-vision-title">{{ __('messages.about_page_vision_title') }}</h3>
+                            <p class="bd-mission-vision-desc">{!! __('messages.about_page_vision_desc') !!}</p>
                         </div>
                     </div>
                 </div>
@@ -74,28 +67,28 @@
                         <div class="bd-counter-content">
                             <h2><span data-purecounter-duration="1" data-purecounter-end="950" class="purecounter">0</span>+
                             </h2>
-                            <p>Ümumi Kurslar</p>
+                            <p>{{ __('messages.about_page_total_courses') }}</p>
                         </div>
                     </div>
                     <div class="bd-counter-item">
                         <div class="bd-counter-content">
                             <h2><span data-purecounter-duration="1" data-purecounter-end="3" class="purecounter">0</span>K+
                             </h2>
-                            <p>Tələbə Qeydiyyatı</p>
+                            <p>{{ __('messages.about_page_student_registered') }}</p>
                         </div>
                     </div>
                     <div class="bd-counter-item">
                         <div class="bd-counter-content">
                             <h2><span data-purecounter-duration="1" data-purecounter-end="89" class="purecounter">0</span>+
                             </h2>
-                            <p>Sertifikatlı Təlimçilər</p>
+                            <p>{{ __('messages.about_page_student_trainers') }}</p>
                         </div>
                     </div>
                     <div class="bd-counter-item">
                         <div class="bd-counter-content">
                             <h2><span data-purecounter-duration="1" data-purecounter-end="1" class="purecounter">0</span>M+
                             </h2>
-                            <p>Məzunlar</p>
+                            <p>{{ __('messages.about_page_student_graduates') }}</p>
                         </div>
                     </div>
                 </div>
@@ -109,9 +102,8 @@
                 <div class="row justify-content-between">
                     <div class="col-xl-6">
                         <div class="bd-section-wrapper section-title-space sidebar-sticky">
-                            <h2 class="bd-section-title white-text mb-20">Əsas Dəyərlər & Fəlsəfə</h2>
-                            <p class="bd-section-paragraph white-text">HiLanguages təhsil yanaşmasını irəli aparan
-                                prinsiplər</p>
+                            <h2 class="bd-section-title white-text mb-20">{{ __('messages.about_page_values_title') }}</h2>
+                            <p class="bd-section-paragraph white-text">{!! __('messages.about_page_values_desc') !!}</p>
                         </div>
                     </div>
                     <div class="col-xl-5">
@@ -120,39 +112,28 @@
                                 <div class="bd-core-values-icon"><img src="{{ asset('images/icon/handshake.svg') }}"
                                         alt="icon">
                                 </div>
-                                <h4 class="bd-core-values-title">Dürüstlük</h4>
-                                <p class="bd-core-values-desc">Biz, bütün qarşılıqlı əlaqələrimizdə yüksək dərəcədə
-                                    dürüstlük və etik davranış standartlarına riayət edirik, tələbələrimizin və
-                                    işçilərimizin
-                                    etibarlı və hörmətli bir mühitdə inkişaf etməsini təmin edirik.</p>
+                                <h4 class="bd-core-values-title">{{ __('messages.about_page_values_item_1_title') }}</h4>
+                                <p class="bd-core-values-desc">{!! __('messages.about_page_values_item_1_desc') !!}</p>
                             </div>
                             <div class="bd-core-values-box bg-flashlight">
                                 <div class="bd-core-values-icon"><img src="{{ asset('images/icon/innovation.svg') }}"
                                         alt="icon"></div>
-                                <h4 class="bd-core-values-title">İnnovasiya</h4>
-                                <p class="bd-core-values-desc">Biz yaradıcılığı və innovasiyanı dəstəkləyir, təhsil
-                                    metodlarımızı
-                                    təkmilləşdirmək və müasir tədris üsullarını tətbiq etmək üçün daima yeniliklər
-                                    axtarırıq.</p>
+                                <h4 class="bd-core-values-title">{{ __('messages.about_page_values_item_2_title') }}</h4>
+                                <p class="bd-core-values-desc">{!! __('messages.about_page_values_item_2_desc') !!}</p>
                             </div>
                             <div class="bd-core-values-box bg-flashlight">
                                 <div class="bd-core-values-icon"><img src="{{ asset('images/icon/excellence.svg') }}"
                                         alt="icon"></div>
-                                <h4 class="bd-core-values-title">Mükəmməllik</h4>
-                                <p class="bd-core-values-desc">Biz təhsil proqramlarımızın bütün aspektlərində mükəmməlliyə
-                                    nail olmağa həsr olunmuşuq, davamlı inkişaf və yüksək keyfiyyətli tədrisə önəm veririk.
+                                <h4 class="bd-core-values-title">{!! __('messages.about_page_values_item_3_title') !!}</h4>
+                                <p class="bd-core-values-desc">
+                                    {{ __('messages.about_page_values_item_3_desc') }}
                                 </p>
                             </div>
                             <div class="bd-core-values-box bg-flashlight">
                                 <div class="bd-core-values-icon"><img src="{{ asset('images/icon/text-books.svg') }}"
                                         alt="icon"></div>
-                                <h4 class="bd-core-values-title">Bizim Təhsil Fəlsəfəmiz</h4>
-                                <p class="bd-core-values-desc"> <strong>HiLanguages</strong> olaraq, biz tələbə-mərkəzli
-                                    yanaşmaya inanırıq,
-                                    fərdi gücləri inkişaf etdirən və ömürboyu öyrənməyə həvəs yaradan bir mühit yaratmağı
-                                    hədəfləyirik. Fəlsəfəmiz, hər bir tələbənin inkişaf etməsi və cəmiyyətə müsbət töhfə
-                                    verməsi
-                                    üçün dəstəkçi və inklüziv bir mühit təmin etmək üzərində qurulmuşdur.</p>
+                                <h4 class="bd-core-values-title">{{ __('messages.about_page_values_item_4_title') }}</h4>
+                                <p class="bd-core-values-desc">{!! __('messages.about_page_values_item_4_desc') !!}</p>
                             </div>
                         </div>
                     </div>

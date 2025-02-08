@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\CommentVideo;
 use App\Models\Course;
 use App\Models\Faq;
 use App\Models\OurTeam;
@@ -15,7 +16,10 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $courses = Course::all();
+        $blogs = Blog::latest()->take(3)->get();
+        $faqs = Faq::where('type', 'Ümumi suallar')->latest()->take(3)->get();
+        return view('index', compact('courses', 'blogs', 'faqs'));
     }
 
     public function about()
@@ -28,6 +32,11 @@ class PageController extends Controller
         $blogs = Blog::orderBy('id', 'desc')->paginate(1);
 
         return view('blog', compact('blogs'));
+    }
+
+    public function register()
+    {
+        return view('register');
     }
 
     public function blogDetail($slug)
@@ -120,5 +129,11 @@ class PageController extends Controller
     {
         $students = Student::all();
         return view('students', compact('students'));
+    }
+
+    public function comments()
+    {
+        $videos = CommentVideo::all();
+        return view('comments', compact('videos'));
     }
 }

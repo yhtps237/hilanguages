@@ -1,9 +1,9 @@
-(function($) {
+(function ($) {
     "use strict";
     var windowOn = $(window);
 
     /* Windows Load */
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         preLoader();
         wowAnimation();
     });
@@ -30,7 +30,7 @@
     /* footer year */
 
     /* Menu nav activation */
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
         const navLinks = document.querySelectorAll('.main-menu ul li a');
         navLinks.forEach(link => {
@@ -50,7 +50,7 @@
     });
 
     /* Mobile Menu Js */
-    $(document).ready(function() {
+    $(document).ready(function () {
         var bdMenuWrap = $('.bd-mobile-menu-active > ul').clone();
         var bdSideMenu = $('.bd-offcanvas-menu nav');
         bdSideMenu.append(bdMenuWrap);
@@ -58,7 +58,7 @@
             $(bdSideMenu).find('.submenu, .mega-menu').parent().append('<button class="bd-menu-close"><i class="fa fa-chevron-right"></i></button>');
         }
         var sideMenuList = $('.bd-offcanvas-menu nav > ul > li button.bd-menu-close, .bd-offcanvas-menu nav > ul li.has-dropdown > a');
-        $(sideMenuList).on('click', function(e) {
+        $(sideMenuList).on('click', function (e) {
             e.preventDefault();
             var $this = $(this).parent();
             var $siblings = $this.siblings('li');
@@ -75,29 +75,29 @@
             }
         });
         /* Sidebar toggle */
-        $('.sidebar-toggle .bar-icon').on('click', function() {
+        $('.sidebar-toggle .bar-icon').on('click', function () {
             $('.bd-offcanvas-menu').toggleClass('active');
         });
     });
 
     /* Sidebar Toggle */
-    $(".bd-offcanvas-close,.bd-offcanvas-overlay").on("click", function() {
+    $(".bd-offcanvas-close,.bd-offcanvas-overlay").on("click", function () {
         $(".bd-offcanvas-area").removeClass("info-open");
         $(".bd-offcanvas-overlay").removeClass("overlay-open");
     });
-    $(".sidebar-toggle").on("click", function() {
+    $(".sidebar-toggle").on("click", function () {
         $(".bd-offcanvas-area").addClass("info-open");
         $(".bd-offcanvas-overlay").addClass("overlay-open");
     });
 
     /* Body overlay Js */
-    $(".body-overlay").on("click", function() {
+    $(".body-overlay").on("click", function () {
         $(".bd-offcanvas-area").removeClass("opened");
         $(".body-overlay").removeClass("opened");
     });
 
     /* Sticky Header Js */
-    windowOn.on('scroll', function() {
+    windowOn.on('scroll', function () {
         var scroll = $(window).scrollTop();
         if (scroll < 250) {
             $("#header-sticky").removeClass("bd-sticky");
@@ -107,16 +107,16 @@
     });
 
     /* Data Css js */
-    $("[data-background").each(function() {
+    $("[data-background").each(function () {
         $(this).css(
             "background-image",
             "url( " + $(this).attr("data-background") + "  )"
         );
     });
-    $("[data-width]").each(function() {
+    $("[data-width]").each(function () {
         $(this).css("width", $(this).attr("data-width"));
     });
-    $("[data-bg-color]").each(function() {
+    $("[data-bg-color]").each(function () {
         $(this).css("background-color", $(this).attr("data-bg-color"));
     });
 
@@ -129,7 +129,7 @@
     });
 
     /* process activation Js */
-    $(document).on('mouseover', '.chooseActive', function() {
+    $(document).on('mouseover', '.chooseActive', function () {
         $(this).addClass('active');
         $('.chooseActive').removeClass('active');
         $(this).addClass('active');
@@ -144,7 +144,7 @@
     $(".bd-sorting-select, .form-select-option, .country-list, .course-level, .course-name, .course-lessons, .course-intro, .input-box-select").niceSelect();
 
     /* Button scroll up js */
-    $(document).ready(function() {
+    $(document).ready(function () {
         var progressPath = document.querySelector(".backtotop-wrap path");
         var pathLength = progressPath.getTotalLength();
         progressPath.style.transition = progressPath.style.WebkitTransition = "none";
@@ -152,7 +152,7 @@
         progressPath.style.strokeDashoffset = pathLength;
         progressPath.getBoundingClientRect();
         progressPath.style.transition = progressPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
-        var updateProgress = function() {
+        var updateProgress = function () {
             var scroll = $(window).scrollTop();
             var height = $(document).height() - $(window).height();
             var progress = pathLength - (scroll * pathLength) / height;
@@ -162,14 +162,14 @@
         $(window).scroll(updateProgress);
         var offset = 150;
         var duration = 550;
-        jQuery(window).on("scroll", function() {
+        jQuery(window).on("scroll", function () {
             if (jQuery(this).scrollTop() > offset) {
                 jQuery(".backtotop-wrap").addClass("active-progress");
             } else {
                 jQuery(".backtotop-wrap").removeClass("active-progress");
             }
         });
-        jQuery(".backtotop-wrap").on("click", function(event) {
+        jQuery(".backtotop-wrap").on("click", function (event) {
             event.preventDefault();
             jQuery("html, body").animate({
                 scrollTop: 0
@@ -187,9 +187,9 @@
     });
 
     /* radial-progress activation */
-    $(document).ready(function() {
-        $(window).scroll(function() {
-            $('.radial-progress').each(function(i) {
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $('.radial-progress').each(function (i) {
                 var bottom_of_object = $(this).offset().top + $(this).outerHeight();
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
                 if (bottom_of_window > bottom_of_object) {
@@ -200,7 +200,7 @@
                         trackColor: false,
                         lineCap: 'round',
                         size: 180,
-                        onStep: function(from, to, percent) {
+                        onStep: function (from, to, percent) {
                             $(this.el).find('.count').text(Math.round(percent));
                         }
                     });
@@ -352,34 +352,61 @@
     });
 
     /* countdown activation start */
-    $(document).ready(function() {
+    $(document).ready(function () {
+        var translations = {
+            az: {
+                days: "Gün",
+                hours: "Saat",
+                minutes: "Dəqiqə",
+                seconds: "Saniyə"
+            },
+            en: {
+                days: "Days",
+                hours: "Hours",
+                minutes: "Minutes",
+                seconds: "Seconds"
+            },
+            ru: {
+                days: "Days",
+                hours: "Hours",
+                minutes: "Minutes",
+                seconds: "Seconds"
+            }
+        };
+        var currentLang = $("html").attr("lang") || "az"; // Default to Azerbaijani
+
         function makeTimer(endTime, countdownElementId) {
             var now = new Date();
             now = (Date.parse(now) / 1000);
             var timeLeft = endTime - now;
             if (timeLeft <= 0) {
                 clearInterval(timerInterval); // Stop the timer
-                $("#" + countdownElementId + " [data-unit='days']").html("00<span>Gün</span>");
-                $("#" + countdownElementId + " [data-unit='hours']").html("00<span>Saat</span>");
-                $("#" + countdownElementId + " [data-unit='minutes']").html("00<span>Dəqiqə</span>");
-                $("#" + countdownElementId + " [data-unit='seconds']").html("00<span>Saniyə</span>");
+                $("#" + countdownElementId + " [data-unit='days']").html("00<span>" + translations[currentLang].days + "</span>");
+                $("#" + countdownElementId + " [data-unit='hours']").html("00<span>" + translations[currentLang].hours + "</span>");
+                $("#" + countdownElementId + " [data-unit='minutes']").html("00<span>" + translations[currentLang].minutes + "</span>");
+                $("#" + countdownElementId + " [data-unit='seconds']").html("00<span>" + translations[currentLang].seconds + "</span>");
                 return;
             }
             var days = Math.floor(timeLeft / 86400);
             var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
             var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
             var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-            if (hours < "10") { hours = "0" + hours; }
-            if (minutes < "10") { minutes = "0" + minutes; }
-            if (seconds < "10") { seconds = "0" + seconds; }
-            $("#" + countdownElementId + " [data-unit='days']").html(days + "<span>Gün</span>");
-            $("#" + countdownElementId + " [data-unit='hours']").html(hours + "<span>Saat</span>");
-            $("#" + countdownElementId + " [data-unit='minutes']").html(minutes + "<span>Dəqiqə</span>");
-            $("#" + countdownElementId + " [data-unit='seconds']").html(seconds + "<span>Saniyə</span>");
+
+            if (hours < 10) { hours = "0" + hours; }
+            if (minutes < 10) { minutes = "0" + minutes; }
+            if (seconds < 10) { seconds = "0" + seconds; }
+
+            $("#" + countdownElementId + " [data-unit='days']").html(days + "<span>" + translations[currentLang].days + "</span>");
+            $("#" + countdownElementId + " [data-unit='hours']").html(hours + "<span>" + translations[currentLang].hours + "</span>");
+            $("#" + countdownElementId + " [data-unit='minutes']").html(minutes + "<span>" + translations[currentLang].minutes + "</span>");
+            $("#" + countdownElementId + " [data-unit='seconds']").html(seconds + "<span>" + translations[currentLang].seconds + "</span>");
         }
-        var endTime = new Date("5 August 2025 14:00:00 GMT+06:00");
+        // var endTime = new Date("5 August 2025 14:00:00 GMT+06:00");
+        var endTime = $("#countdown2").data("endtime");
+        var endTime = new Date(endTime);
+
         endTime = (Date.parse(endTime) / 1000);
-        var timerInterval = setInterval(function() {
+        var timerInterval = setInterval(function () {
             makeTimer(endTime, "countdown1");
             makeTimer(endTime, "countdown2");
             makeTimer(endTime, "countdown3");
@@ -520,7 +547,7 @@
     /* testimonial Active 02  end*/
 
     /* testimonial Active 03  start*/
-    $(document).ready(function() {
+    $(document).ready(function () {
         const testimonialActiveThree = new Swiper(".testimonialActiveThree", {
             loop: true,
             autoplay: {
@@ -802,7 +829,7 @@
 
     /* featured js for feature properties */
     if ($('.course-item-load-more').length > 0) {
-        $('.grid').imagesLoaded(function() {
+        $('.grid').imagesLoaded(function () {
             var $grid = $('.grid').isotope({
                 itemSelector: '.grid-item',
                 percentPosition: true,
@@ -810,11 +837,11 @@
                     columnWidth: '.grid-item',
                 }
             });
-            $('.course-item').on('click', 'button', function() {
+            $('.course-item').on('click', 'button', function () {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({ filter: filterValue });
             });
-            $('.course-item button').on('click', function(event) {
+            $('.course-item button').on('click', function (event) {
                 $(this).siblings('.active').removeClass('active');
                 $(this).addClass('active');
                 event.preventDefault();
@@ -826,7 +853,7 @@
 
             function loadMore(showing) {
                 $grid.find(".hidden").removeClass("hidden");
-                var hidden = isotop_call.filteredItems.slice(showing, isotop_call.filteredItems.length).map(function(item) {
+                var hidden = isotop_call.filteredItems.slice(showing, isotop_call.filteredItems.length).map(function (item) {
                     return item.element;
                 });
                 $(hidden).addClass('hidden');
@@ -837,7 +864,7 @@
                     jQuery("#course-load-more").show();
                 };
             }
-            $("#course-load-more").on('click', function() {
+            $("#course-load-more").on('click', function () {
                 if ($('.course-item').data('clicked')) {
                     count_item = show_item;
                     $('.course-item').data('clicked', false);
@@ -847,13 +874,13 @@
                 count_item = count_item + show_item;
                 loadMore(count_item);
             });
-            $(".course-item").on('click', function() {
+            $(".course-item").on('click', function () {
                 $(this).data('clicked', true);
                 loadMore(show_item);
             });
         });
     } else {
-        $('.grid').imagesLoaded(function() {
+        $('.grid').imagesLoaded(function () {
             var $grid = $('.grid').isotope({
                 itemSelector: '.grid-item',
                 percentPosition: true,
@@ -861,11 +888,11 @@
                     columnWidth: '.grid-item',
                 }
             });
-            $('.course-item').on('click', 'button', function() {
+            $('.course-item').on('click', 'button', function () {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({ filter: filterValue });
             });
-            $('.course-item button').on('click', function(event) {
+            $('.course-item button').on('click', function (event) {
                 $(this).siblings('.active').removeClass('active');
                 $(this).addClass('active');
                 event.preventDefault();
@@ -874,7 +901,7 @@
         var show_item_2 = $('.course-load-item-count').attr('data-show');
         $(".featured-load-item").hide();
         $(".featured-load-item").slice(0, show_item_2).show();
-        $("body").on('click touchstart', '.load-more', function(e) {
+        $("body").on('click touchstart', '.load-more', function (e) {
             e.preventDefault();
             $(".course-load-item:hidden").slice(0, show_item_2).slideDown();
             if ($(".course-load-item:hidden").length == 0) {
@@ -883,13 +910,13 @@
         });
     }
 
-    document.addEventListener('mousemove', function(event) {
+    document.addEventListener('mousemove', function (event) {
         let x = event.clientX;
         let y = event.clientY;
         let xPercent = (x / window.innerWidth) - 0.5;
         let yPercent = (y / window.innerHeight) - 0.5;
         let shapes = document.querySelectorAll('.shape-move img');
-        shapes.forEach(function(shape, index) {
+        shapes.forEach(function (shape, index) {
             let multiplierX = 40 + index * 2;
             let multiplierY = 40 + index * 2;
             let translateX = xPercent * multiplierX;
@@ -899,35 +926,35 @@
     });
 
     /* popup search activation */
-    $(".bd-search-open-btn").on("click", function() {
+    $(".bd-search-open-btn").on("click", function () {
         $(".bd-search-popup-area").addClass("bd-search-opened");
         $(".bd-search-overlay").addClass("bd-search-opened");
     });
-    $(".bd-search-close-btn").on("click", function() {
+    $(".bd-search-close-btn").on("click", function () {
         $(".bd-search-popup-area").removeClass("bd-search-opened");
         $(".bd-search-overlay").removeClass("bd-search-opened");
     });
-    $(".bd-search-overlay").on("click", function() {
+    $(".bd-search-overlay").on("click", function () {
         $(".bd-search-popup-area").removeClass("bd-search-opened");
         $(".bd-search-overlay").removeClass("bd-search-opened");
     });
 
     /* cart mini Js */
-    $(".cartmini-open-btn").on("click", function() {
+    $(".cartmini-open-btn").on("click", function () {
         $(".bd-sidebar-cart-area").addClass("bd-sidebar-cart-opened");
         $(".body-overlay").addClass("opened");
     });
-    $(".cartmini-close-btn").on("click", function() {
+    $(".cartmini-close-btn").on("click", function () {
         $(".bd-sidebar-cart-area").removeClass("bd-sidebar-cart-opened");
         $(".body-overlay").removeClass("opened");
     });
 
     /* Body overlay Js  */
-    $(".body-overlay").on("click", function() {
+    $(".body-overlay").on("click", function () {
         $(".bd-sidebar-cart-area").removeClass("bd-sidebar-cart-opened");
         $(".body-overlay").removeClass("opened");
     });
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const gridTrigger = document.querySelector('.bd-grid-filter-trigger');
         const listTrigger = document.querySelector('.bd-list-filter-trigger');
         const gridView = document.querySelector('.display-layout-grid');
@@ -935,7 +962,7 @@
         const gridText = document.querySelector('.bd-grid-filter-text');
         const listText = document.querySelector('.bd-list-filter-text');
         if (gridTrigger && listTrigger && gridView && listView && gridText && listText) {
-            gridTrigger.addEventListener('click', function() {
+            gridTrigger.addEventListener('click', function () {
                 gridView.classList.add('active');
                 listView.classList.remove('active');
                 gridTrigger.classList.add('active');
@@ -943,7 +970,7 @@
                 gridText.classList.add('active');
                 listText.classList.remove('active');
             });
-            listTrigger.addEventListener('click', function() {
+            listTrigger.addEventListener('click', function () {
                 listView.classList.add('active');
                 gridView.classList.remove('active');
                 listTrigger.classList.add('active');
@@ -955,32 +982,32 @@
     });
 
     /*  Show Login Toggle Js */
-    $('.bd-filter-btn').on('click', function() {
+    $('.bd-filter-btn').on('click', function () {
         $('#filterContent').slideToggle(400);
     });
 
-    $("#show-review-box").on("click", function() {
+    $("#show-review-box").on("click", function () {
         $("#review-box").slideToggle(700);
     });
 
     /* star ratings js */
     let reviewStarElm = $(".bd-ratings-wrapper");
     if (reviewStarElm.length) {
-        reviewStarElm.find('i').on('mouseover', function() {
+        reviewStarElm.find('i').on('mouseover', function () {
             var onStar = parseInt($(this).data('value'), 10);
-            $(this).parent().children('i').each(function(e) {
+            $(this).parent().children('i').each(function (e) {
                 if (e < onStar) {
                     $(this).addClass('hover');
                 } else {
                     $(this).removeClass('hover');
                 }
             });
-        }).on('mouseout', function() {
-            $(this).parent().children('i').each(function(e) {
+        }).on('mouseout', function () {
+            $(this).parent().children('i').each(function (e) {
                 $(this).removeClass('hover');
             });
         });
-        reviewStarElm.find('i').on('click', function() {
+        reviewStarElm.find('i').on('click', function () {
             var onStar = parseInt($(this).data('value'), 10);
             var stars = $(this).parent().children('i');
             for (let i = 0; i < stars.length; i++) {
@@ -1001,11 +1028,11 @@
     }
 
     /* course details sticky menu activation */
-    $(document).ready(function() {
+    $(document).ready(function () {
         function updateActiveMenu() {
             var scrollPosition = $(window).scrollTop();
             var targetOffset = 325;
-            $('.bd-course-menu nav ul li').each(function() {
+            $('.bd-course-menu nav ul li').each(function () {
                 var sectionId = $(this).find('a').attr('href');
                 var section = $(sectionId);
                 if (section.length) {
@@ -1019,7 +1046,7 @@
             });
         }
         /* Smooth scroll on click */
-        $('.bd-course-menu nav ul li a').on('click', function(event) {
+        $('.bd-course-menu nav ul li a').on('click', function (event) {
             var target = $(this.getAttribute('href'));
             var targetOffset = 325;
             if (target.length) {
@@ -1030,7 +1057,7 @@
             }
         });
         /* Update active menu on scroll */
-        $(window).on('scroll', function() {
+        $(window).on('scroll', function () {
             updateActiveMenu();
         });
 
@@ -1039,26 +1066,26 @@
     });
 
     /* Quantity Incases */
-    $(document).ready(function() {
-        $(".increase").on("click", function() {
+    $(document).ready(function () {
+        $(".increase").on("click", function () {
             if ($(this).prev().val() < 999) {
                 $(this)
                     .prev()
                     .val(+$(this).prev().val() + 1);
             }
         });
-        $(".decrease").on("click", function() {
+        $(".decrease").on("click", function () {
             if ($(this).next().val() > 0) {
                 if ($(this).next().val() > 0)
                     $(this)
-                    .next()
-                    .val(+$(this).next().val() - 1);
+                        .next()
+                        .val(+$(this).next().val() - 1);
             }
         });
     });
 
     /* custom progress counter */
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const progressItems = document.querySelectorAll(".progress-item");
         progressItems.forEach(item => {
             const progressBar = item.querySelector(".progress");
@@ -1066,7 +1093,7 @@
             const targetPercentage = parseInt(progressBar.getAttribute("data-percentage"), 10);
             progressBar.style.width = targetPercentage + "%";
             let count = 0;
-            const counter = setInterval(function() {
+            const counter = setInterval(function () {
                 if (count <= targetPercentage) {
                     percentageElement.textContent = count + "%";
                     count++;
@@ -1077,14 +1104,14 @@
         });
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(window).scrollTop(0);
         var navListItems = $('div.bd-form-setup-panel div a'),
             allWells = $('.bd-form-setup-content'),
             allNextBtn = $('.nextBtn'),
             allPrevBtn = $('.prevBtn');
         allWells.hide();
-        navListItems.click(function(e) {
+        navListItems.click(function (e) {
             e.preventDefault();
             var $target = $($(this).attr('href')),
                 $item = $(this);
@@ -1095,14 +1122,14 @@
                 $target.show();
             }
         });
-        allPrevBtn.click(function() {
+        allPrevBtn.click(function () {
             var curStep = $(this).closest(".bd-form-setup-content"),
                 curStepBtn = curStep.attr("id"),
                 prevStepSteps = $('div.bd-form-setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
 
             prevStepSteps.removeAttr('disabled').trigger('click');
         });
-        allNextBtn.click(function() {
+        allNextBtn.click(function () {
             var curStep = $(this).closest(".bd-form-setup-content"),
                 curStepBtn = curStep.attr("id"),
                 nextStepSteps = $('div.bd-form-setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
@@ -1126,7 +1153,7 @@
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
                 $('#imagePreview').hide();
                 $('#imagePreview').bdFadeIn(650);
@@ -1134,11 +1161,11 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    $("#imageUpload").change(function() {
+    $("#imageUpload").change(function () {
         readURL(this);
     });
-    $(document).ready(function() {
-        $('a.bd-campus-gallery-thumb').on('click', function(event) {
+    $(document).ready(function () {
+        $('a.bd-campus-gallery-thumb').on('click', function (event) {
             event.preventDefault();
             var gallery = $(this).attr('href');
             $(gallery).magnificPopup({
@@ -1345,59 +1372,59 @@
         });
 
         var amount1 = document.getElementById('amount');
-        slider1.noUiSlider.on('update', function(values, handle) {
+        slider1.noUiSlider.on('update', function (values, handle) {
             amount1.value = "$" + values[0] + " - $" + values[1];
         });
 
-        $('#filter-btn').on('click', function() {
+        $('#filter-btn').on('click', function () {
             $('.filter-widget').slideToggle(1000);
         });
     }
 
     /* row remove activation */
-    $(document).ready(function() {
-        $('.removeRow').click(function() {
+    $(document).ready(function () {
+        $('.removeRow').click(function () {
             $(this).closest('tr').remove();
         });
     });
 
     /* Show Login Toggle Js */
-    $('#showlogin').on('click', function() {
+    $('#showlogin').on('click', function () {
         $('#checkout-login').slideToggle(900);
     });
 
     /* Show Coupon Toggle Js */
-    $('#showcoupon').on('click', function() {
+    $('#showcoupon').on('click', function () {
         $('#checkout_coupon').slideToggle(900);
     });
     /* checkout-payment-item */
-    $('.checkout-payment-item label').on('click', function() {
+    $('.checkout-payment-item label').on('click', function () {
         $(this).siblings('.checkout-payment-desc').slideToggle(400);
 
     });
 
     /* Show Login Toggle Js */
-    $('.checkout-login-form-reveal-btn').on('click', function() {
+    $('.checkout-login-form-reveal-btn').on('click', function () {
         $('#returnCustomerLoginForm').slideToggle(400);
     });
 
     /* Show Coupon Toggle Js */
-    $('.checkout-coupon-form-reveal-btn').on('click', function() {
+    $('.checkout-coupon-form-reveal-btn').on('click', function () {
         $('#checkoutCouponForm').slideToggle(400);
     });
 
     /* Create An Account Toggle Js */
-    $('#cbox').on('click', function() {
+    $('#cbox').on('click', function () {
         $('#cbox_info').slideToggle(900);
     });
 
     /* Shipping Box Toggle Js */
-    $('#ship-box').on('click', function() {
+    $('#ship-box').on('click', function () {
         $('#ship-box-info').slideToggle(1000);
     });
 
     /* Dashboard Sidebar nav activation */
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
         const navLinks = document.querySelectorAll('.bd-dashboard-menu ul li a');
         navLinks.forEach(link => {
@@ -1449,7 +1476,7 @@
                         fontSize: '14px',
                         fontWeight: 100,
                     },
-                    formatter: function(y) {
+                    formatter: function (y) {
                         return y.toFixed(0) + "k";
                     }
                 },
@@ -1521,7 +1548,7 @@
             },
             tooltip: {
                 y: {
-                    formatter: function(val) {
+                    formatter: function (val) {
                         return "$ " + val + " thousands"
                     }
                 }
@@ -1535,7 +1562,7 @@
     /* Courses Analytics Chart */
     if (jQuery("#coursesAnalyticsChart").length > 0) {
         var options = {
-            series: [25, 30, 50, ],
+            series: [25, 30, 50,],
             chart: {
                 type: 'donut',
                 width: 320,
@@ -1674,7 +1701,7 @@
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
                 $('#imagePreview').hide();
                 $('#imagePreview').bdFadeIn(650); /* corrected from bdFadeIn to fadeIn */
@@ -1682,12 +1709,12 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    $("#imageUpload").change(function() {
+    $("#imageUpload").change(function () {
         readURL(this);
     });
 
     /* Sidebar js */
-    $("#sidebarActive").on("click", function() {
+    $("#sidebarActive").on("click", function () {
         if (window.innerWidth > 0 && window.innerWidth <= 1199) {
             $(".bd-lesson-content, .bd-lesson-player").toggleClass("open");
         } else {
@@ -1695,7 +1722,7 @@
         }
         $(".app-offcanvas-overlay").toggleClass("overlay-open");
     });
-    $(".app-offcanvas-overlay").on("click", function() {
+    $(".app-offcanvas-overlay").on("click", function () {
         $(".bd-lesson-content, .bd-lesson-player").removeClass("collapsed");
         $(".bd-lesson-content, .bd-lesson-player").removeClass("open");
         $(".app-offcanvas-overlay").removeClass("overlay-open");
@@ -1714,14 +1741,14 @@
     });
 
     /* pricing plan change js */
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const yearlyBtn = document.querySelector('.yearly-plan-btn');
         const monthlyBtn = document.querySelector('.monthly-plan-btn');
         const yearlyPricing = document.querySelectorAll('.yearly-pricing');
         const monthlyPricing = document.querySelectorAll('.monthly-pricing');
         if (yearlyBtn && monthlyBtn) {
             /* Show Yearly Pricing */
-            yearlyBtn.addEventListener('click', function() {
+            yearlyBtn.addEventListener('click', function () {
                 yearlyBtn.classList.add('active');
                 monthlyBtn.classList.remove('active');
                 yearlyPricing.forEach(el => (el.style.display = 'none'));
@@ -1729,7 +1756,7 @@
             });
 
             /* Show Monthly Pricing */
-            monthlyBtn.addEventListener('click', function() {
+            monthlyBtn.addEventListener('click', function () {
                 monthlyBtn.classList.add('active');
                 yearlyBtn.classList.remove('active');
                 yearlyPricing.forEach(el => (el.style.display = 'block'));

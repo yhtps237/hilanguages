@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="az">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="utf-8">
@@ -57,6 +57,7 @@
     <!-- Backtotop end -->
 
     <!-- JS here -->
+
     <script src="{{ asset('js/vendor/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('js/plugins/waypoints.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }}"></script>
@@ -72,8 +73,6 @@
     <script src="{{ asset('js/plugins/nouislider.min.js') }}"></script>
     <script src="{{ asset('js/plugins/apexcharts.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/layout/navbar.js') }}"></script>
-    <script src="{{ asset('js/layout/footer.js') }}"></script>
     <script src="{{ asset('js/pages/slider.js') }}"></script>
 </body>
 

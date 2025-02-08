@@ -18,9 +18,10 @@
                             <div class="bd-breadcrumb style-two">
                                 <div class="bd-breadcrumb-content">
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-solid fa-angle-right"></i></span>
-                                        <span class="active">Əlaqə</span>
+                                        <span class="active">{{ __('messages.contact_page_title') }}</span>
                                     </div>
 
                                 </div>
@@ -39,8 +40,8 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="bd-contact-form-wrapper">
                             <div class="bd-section-title-wrapper section-title-space">
-                                <h2 class="bd-section-title mb-20">Bizimlə əlaqə</h2>
-                                <p class="bd-section-paragraph">Bizim mehriban komandamız sizdən eşitmək istərdi.</p>
+                                <h2 class="bd-section-title mb-20">{{ __('messages.contact_page_title') }}</h2>
+                                <p class="bd-section-paragraph">{{ __('messages.contact_page_desc') }}</p>
                             </div>
                             <div class="bd-contact-form">
                                 <form action="#">
@@ -48,52 +49,59 @@
                                         <div class="col-md-12">
                                             <div class="form-input-box">
                                                 <div class="form-input-title">
-                                                    <label for="firstName">Ad soyad<span>*</span></label>
+                                                    <label
+                                                        for="firstName">{{ __('messages.contac_page_form_name') }}<span>*</span></label>
                                                 </div>
                                                 <div class="form-input">
                                                     <input name="firstName" id="firstName" type="text"
-                                                        placeholder="Ad soyad">
+                                                        placeholder="{{ __('messages.contac_page_form_name') }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-input-box">
                                                 <div class="form-input-title">
-                                                    <label for="emailAddress">E-poçt<span>*</span></label>
+                                                    <label
+                                                        for="emailAddress">{{ __('messages.contac_page_form_email') }}<span>*</span></label>
                                                 </div>
                                                 <div class="form-input">
                                                     <input name="email" id="emailAddress" type="email"
-                                                        placeholder="E-poçt">
+                                                        placeholder="{{ __('messages.contac_page_form_email') }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-input-box">
                                                 <div class="form-input-title">
-                                                    <label for="subject">Mövzu</label>
+                                                    <label
+                                                        for="subject">{{ __('messages.contac_page_form_topic') }}</label>
                                                 </div>
                                                 <div class="form-input">
-                                                    <input name="subject" id="subject" type="text" placeholder="Mövzu">
+                                                    <input name="subject" id="subject" type="text"
+                                                        placeholder="{{ __('messages.contac_page_form_topic') }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xxl-12">
                                             <div class="form-input-box mb-15">
                                                 <div class="form-input-title">
-                                                    <label for="message">Qeyd<span>*</span></label>
+                                                    <label
+                                                        for="message">{{ __('messages.contac_page_form_note') }}<span>*</span></label>
                                                 </div>
                                                 <div class="form-input">
-                                                    <textarea id="message" placeholder="Qeyd"></textarea>
+                                                    <textarea id="message" placeholder="{{ __('messages.contac_page_form_note') }}"></textarea>
                                                 </div>
                                             </div>
                                             <div class="checkbox-option">
                                                 <input id="course-check-1" type="checkbox">
-                                                <label for="course-check-1">Məlumatların düzgünlüyünü təsdiq edirəm.</label>
+                                                <label
+                                                    for="course-check-1">{{ __('messages.contac_page_form_submit') }}</label>
                                             </div>
                                         </div>
                                         <div class="col-xxl-12">
                                             <div class="bd-contact-form-btn">
-                                                <button class="bd-btn btn-primary w-100" type="button">Göndər</button>
+                                                <button class="bd-btn btn-primary w-100"
+                                                    type="button">{{ __('messages.contac_page_form_send') }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -116,8 +124,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="bd-section-title-wrapper section-title-space text-center">
-                            <span class="bd-section-subtitle">Ünvanımız</span>
-                            <h2 class="bd-section-title mb-20">Ofisimiz</h2>
+                            <span class="bd-section-subtitle">{{ __('messages.contact_page_address') }}</span>
+                            <h2 class="bd-section-title mb-20">{{ __('messages.contact_page_address2') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -128,8 +136,8 @@
                                 <i class="fa-light fa-map-marker-alt"></i>
                             </div>
                             <div class="content">
-                                <h6 class="title">Bakı</h6>
-                                <p>Akademik Həsən Əliyev küçəsi, 80D</p>
+                                <h6 class="title">{{ __('messages.address') }}</h6>
+                                <p>{{ $contactDetails->address }}</p>
                                 </p>
                             </div>
                         </div>
@@ -140,9 +148,11 @@
                                 <i class="fa-light fa-phone"></i>
                             </div>
                             <div class="content">
-                                <h6 class="title">Zəng et</h6>
-                                <p>+994 77 220 18 08</p>
-                                <p>+994 77 220 18 08</p>
+                                <h6 class="title">{{ __('messages.call') }}</h6>
+                                <p>{{ $contactDetails->phone_number }}</p>
+                                @if ($contactDetails->phone_number2)
+                                    <p>{{ $contactDetails->phone_number2 }}</p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -152,9 +162,12 @@
                                 <i class="fa-light fa-envelope"></i>
                             </div>
                             <div class="content">
-                                <h6 class="title">E-poçt</h6>
-                                <p><a href="mailto:info@hilanguages.az">info@hilanguages.az</a></p>
-                                <p><a href="mailto:hr@hilanguages.az">hr@hilanguages.az</a></p>
+                                <h6 class="title">{{ __('messages.email') }}</h6>
+                                <p><a href="mailto:{{ $contactDetails->email }}">{{ $contactDetails->email }}</a></p>
+                                @if ($contactDetails->email2)
+                                    <p><a href="mailto:{{ $contactDetails->email2 }}">{{ $contactDetails->email2 }}</a>
+                                    </p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -163,10 +176,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bd-contact-map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.7212066682782!2d49.84298717642714!3d40.40133195657574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307dabaf46eccb%3A0x8ee4131cc5159817!2zSMmZZMmZZiDFnmlya8mZdGzJmXIgUXJ1cHU!5e1!3m2!1str!2saz!4v1738582782890!5m2!1str!2saz"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            {!! $contactDetails->map !!}
                         </div>
                     </div>
                 </div>

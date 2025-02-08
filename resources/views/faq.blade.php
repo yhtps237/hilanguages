@@ -20,7 +20,8 @@
                                 <div class="bd-breadcrumb-content">
                                     <h1 class="bd-breadcrumb-title text-center">FAQ</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
                                         <span class="active">FAQ</span>
 
@@ -46,7 +47,7 @@
                 <div class="row gy-30">
                     <div class="col-xl-4 col-lg-5">
                         <div class="bd-section-title-wrapper section-title-space">
-                            <h2 class="bd-section-title">Kömək lazımdır?<br class="d-none d-lg-block">Cavabları Burada Tapın
+                            <h2 class="bd-section-title">{!! __('messages.faq_page_title') !!}
                             </h2>
                         </div>
                         <div class="bd-faq-tab-menu">
@@ -54,13 +55,15 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-home" type="button" role="tab"
-                                        aria-controls="pills-home" aria-selected="true">Ümumi suallar</button>
+                                        aria-controls="pills-home"
+                                        aria-selected="true">{{ __('messages.faq_page_category_1') }}</button>
                                 </li>
 
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-contact" type="button" role="tab"
-                                        aria-controls="pills-contact" aria-selected="false">Ödənişlər</button>
+                                        aria-controls="pills-contact"
+                                        aria-selected="false">{{ __('messages.faq_page_category_2') }}</button>
                                 </li>
                             </ul>
                         </div>

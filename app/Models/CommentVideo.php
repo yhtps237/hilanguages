@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VideoGallery extends Model
+class CommentVideo extends Model
 {
     use HasFactory;
 
-    protected $table = 'video_gallery';
+    protected $table = 'comment_videos';
 
     protected $fillable = [
         'url',

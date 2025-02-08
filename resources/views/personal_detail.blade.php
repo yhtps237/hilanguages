@@ -28,7 +28,7 @@
                                         <h1>Hi Languages</h1>
 
                                     </div>
-                                    <p style="font-size: 25px;">Sertifikatlar</p>
+                                    <p style="font-size: 25px;">{{ __('messages.certificates') }}</p>
                                 </div>
                                 <div class="bd-dashboard-profile-info">
                                     <div class="bd-dashboard-profile-inner">

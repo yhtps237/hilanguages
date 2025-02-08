@@ -18,11 +18,12 @@
                         <div class="col-xl-12">
                             <div class="bd-breadcrumb style-two d-flex-center">
                                 <div class="bd-breadcrumb-content">
-                                    <h1 class="bd-breadcrumb-title">Tələbələrimiz</h1>
+                                    <h1 class="bd-breadcrumb-title">{{ __('messages.students_page_title') }}</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
-                                        <span class="active">Tələbələrimiz</span>
+                                        <span class="active">{{ __('messages.students_page_title') }}</span>
                                     </div>
                                 </div>
                             </div>

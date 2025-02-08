@@ -6,16 +6,16 @@ use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
-use \App\Models\VideoGallery;
+use \App\Models\CommentVideo;
 
-class VideoGalleryController extends AdminController
+class CommentVideoController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = 'VideoGallery';
+    protected $title = 'CommentVideo';
 
     /**
      * Make a grid builder.
@@ -24,7 +24,7 @@ class VideoGalleryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new VideoGallery());
+        $grid = new Grid(new CommentVideo());
 
         $grid->column('id', __('Id'));
         $grid->column('url', __('Url'))->display(function ($url) {
@@ -71,7 +71,7 @@ class VideoGalleryController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(VideoGallery::findOrFail($id));
+        $show = new Show(CommentVideo::findOrFail($id));
 
         $show->field('id', __('Id'));
         $show->field('url', __('Url'));
@@ -91,7 +91,7 @@ class VideoGalleryController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new VideoGallery());
+        $form = new Form(new CommentVideo());
 
         $form->text('url', __('Url'));
         $form->text('head_az', __('admin.Head_az'));

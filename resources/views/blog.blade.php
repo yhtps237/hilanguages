@@ -27,11 +27,12 @@ $languageCode = app()->getLocale();
                         <div class="col-xl-12">
                             <div class="bd-breadcrumb style-two d-flex-center">
                                 <div class="bd-breadcrumb-content">
-                                    <h1 class="bd-breadcrumb-title text-center">Xəbərlər</h1>
+                                    <h1 class="bd-breadcrumb-title text-center">{{ __('messages.menu_item4_3') }}</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
-                                        <span class="active">Xəbərlər</span>
+                                        <span class="active">{{ __('messages.menu_item4_3') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@ $languageCode = app()->getLocale();
                                         <div class="icon-text-btn p-relative">
                                             <a
                                                 href="{{ localized_route('blogDetail', ['slug' => $blog->slug_az], app()->getLocale()) }}">
-                                                <span>Ətraflı</span>
+                                                <span>{{ __('messages.more') }}</span>
                                                 <i>
                                                     <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">

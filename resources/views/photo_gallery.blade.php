@@ -18,11 +18,12 @@
                         <div class="col-xl-12">
                             <div class="bd-breadcrumb style-two d-flex-center">
                                 <div class="bd-breadcrumb-content">
-                                    <h1 class="bd-breadcrumb-title text-center">Foto Qalereya</h1>
+                                    <h1 class="bd-breadcrumb-title text-center">{{ __('messages.menu_item4_1') }}</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
-                                        <span class="active">Foto Qalereya</span>
+                                        <span class="active">{{ __('messages.menu_item4_1') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -44,8 +45,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8">
                         <div class="bd-section-title-wrapper section-title-space text-center">
-                            <span class="bd-section-subtitle">Anılarımız çəkildi</span>
-                            <h2 class="bd-section-title">Hər Kadrda Gözəlliyi Kəşf Edin</h2>
+                            <span class="bd-section-subtitle">{{ __('messages.photo_gallery_title') }}</span>
+                            <h2 class="bd-section-title">{{ __('messages.photo_gallery_desc') }}</h2>
                         </div>
                     </div>
                 </div>

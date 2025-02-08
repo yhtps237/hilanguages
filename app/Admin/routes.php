@@ -22,4 +22,6 @@ Route::group([
     $router->resource('certificates', CertificateController::class);
     $router->resource('courses', CourseController::class);
     $router->resource('students', StudentController::class);
+    $router->resource('comment-videos', CommentVideoController::class);
+    $router->resource('contacts', ContactController::class);
 });

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Blog;
+use App\Models\Contact;
 use App\Models\Course;
 use App\Models\OurTeam;
 use App\Models\Service;
@@ -12,6 +13,7 @@ use App\Observers\OurTeamObserver;
 use App\Observers\ServiceObserver;
 use OpenAdmin\Admin\Config\Config;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,7 +35,9 @@ class AppServiceProvider extends ServiceProvider
         OurTeam::observe(OurTeamObserver::class);
         Course::observe(CourseObserver::class);
 
+        View::share('coursesForHeader', Course::all());
+        View::share('contactDetails', Contact::first());
 
-        // Config::load();
+        Config::load();
     }
 }

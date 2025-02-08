@@ -6,14 +6,14 @@
                     <a href="tel:+994772201808">
                         <span>
                             <i class="fa-solid fa-phone-volume"></i>
-                        </span>+994 77 220 08 18
+                        </span>{{ $contactDetails->phone_number }}
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:info@hilanguages.az">
+                    <a href="mailto:{{ $contactDetails->email }}">
                         <span>
                             <i class="fa-sharp fa-light fa-envelope"></i>
-                        </span>info@hilanguages.az
+                        </span>{{ $contactDetails->email }}
                     </a>
                 </li>
             </ul>
@@ -22,7 +22,7 @@
             <a href="#">
                 <span>
                     <i class="fa-sharp fa-regular fa-location-dot"></i>
-                </span>Akademik Həsən Əliyev küçəsi, 80D
+                </span>{{ $contactDetails->address }}
             </a>
         </div>
     </div>
@@ -41,24 +41,13 @@
                     <div class="bd-category-dropdown">
                         <nav>
                             <ul>
-                                <li>
-                                    <a href="courses.html">Başlanğıc Səviyyə (Beginner - A1)</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html">Orta Səviyyə (Intermediate - B1)</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html">İrəliləmiş Səviyyə (Advanced - C1/C2)</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html">IELTS Hazırlıq</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html">TOEFL Hazırlıq</a>
-                                </li>
-                                <li>
-                                    <a href="courses.html">Akademik Yazı və Danışıq</a>
-                                </li>
+                                @foreach ($coursesForHeader as $course)
+                                    <li>
+                                        <a
+                                            href="{{ localized_route('courseDetail', ['slug' => $course->{'slug_' . app()->getLocale()}], app()->getLocale()) }}">
+                                            {{ getLocalizedField($course, 'head') }}</a>
+                                    </li>
+                                @endforeach
 
                             </ul>
                         </nav>
@@ -87,49 +76,55 @@
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{{ localized_route('course', [], app()->getLocale()) }}">Kurslar</a>
+                            <a
+                                href="{{ localized_route('course', [], app()->getLocale()) }}">{{ __('messages.menu_item3') }}</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="#">Media</a>
+                            <a href="#">{{ __('messages.menu_item4') }}</a>
                             <ul class="submenu last-children">
                                 <li>
-                                    <a href="{{ localized_route('photoGallery', [], app()->getLocale()) }}">Foto
-                                        Qalereya</a>
+                                    <a
+                                        href="{{ localized_route('photoGallery', [], app()->getLocale()) }}">{{ __('messages.menu_item4_1') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ localized_route('videoGallery', [], app()->getLocale()) }}">Video
-                                        Qalereya</a>
+                                    <a
+                                        href="{{ localized_route('videoGallery', [], app()->getLocale()) }}">{{ __('messages.menu_item4_2') }}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ localized_route('blog', [], app()->getLocale()) }}">Xəbərlər</a>
+                                    <a
+                                        href="{{ localized_route('blog', [], app()->getLocale()) }}">{{ __('messages.menu_item4_3') }}</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Nəticələrimiz</a>
+                            <a href="#">{{ __('messages.menu_item5') }}</a>
                             <ul class="submenu last-children">
                                 <li>
-                                    <a href="{{ localized_route('students', [], app()->getLocale()) }}">Tələbələr</a>
+                                    <a
+                                        href="{{ localized_route('students', [], app()->getLocale()) }}">{{ __('messages.menu_item5_1') }}</a>
                                 </li>
                                 <li>
-                                    <a href="videogallery.html">Yorumlar</a>
+                                    <a
+                                        href="{{ localized_route('comments', [], app()->getLocale()) }}">{{ __('messages.menu_item5_2') }}</a>
                                 </li>
 
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{{ localized_route('contact', [], app()->getLocale()) }}">Əlaqə</a>
+                            <a
+                                href="{{ localized_route('contact', [], app()->getLocale()) }}">{{ __('messages.menu_item6') }}</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{{ localized_route('career', [], app()->getLocale()) }}">Vakansiya</a>
+                            <a
+                                href="{{ localized_route('career', [], app()->getLocale()) }}">{{ __('messages.menu_item7') }}</a>
                         </li>
                         <li class="menu-item-has-children language-selector">
                             <a href="#" id="selected-lang">Az</a>
                             <ul class="submenu">
                                 <li><a href="{{ current_route('az') }}">Az</a></li>
                                 <li><a href="{{ current_route('en') }}">En</a></li>
-                                <li><a href="{{ current_route('ru') }}">Rus</a></li>
+                                <li><a href="{{ current_route('ru') }}">Ru</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -139,8 +134,9 @@
 
             <div class="bd-header-right">
                 <div class="bd-header-sign-btn">
-                    <a class="bd-btn btn-outline-primary h-40px" href="#">Bilet al</a>
-                    <a class="bd-btn btn-outline-border-primary h-40px" href="#">Qeydiyyatdan keç</a>
+                    <a class="bd-btn btn-outline-primary h-40px" href="#">{{ __('messages.menu_item8') }}</a>
+                    <a class="bd-btn btn-outline-border-primary h-40px"
+                        href="{{ localized_route('register', [], app()->getLocale()) }}">{{ __('messages.menu_item9') }}</a>
                 </div>
                 <div class="bd-header-hamburger">
                     <div class="sidebar-toggle">
@@ -155,42 +151,43 @@
         </div>
     </div>
 </header>
- <!-- Offcanvas area start -->
- <div class="fix">
+<!-- Offcanvas area start -->
+<div class="fix">
     <div class="bd-offcanvas-area">
         <div class="bd-offcanvas-wrapper">
             <div class="bd-offcanvas-content">
                 <div class="bd-offcanvas-top d-flex justify-content-between align-items-center mb-30">
                     <div class="bd-offcanvas-logo">
-                   
+
                     </div>
                     <div class="bd-offcanvas-close">
                         <button class="bd-offcanvas-close-icon animation--flip">
                             <span class="bd-offcanvas-m-lines">
-                            <span class="bd-offcanvas-m-line line--1"></span><span
-                                class="bd-offcanvas-m-line line--2"></span><span
-                                class="bd-offcanvas-m-line line--3"></span>
+                                <span class="bd-offcanvas-m-line line--1"></span><span
+                                    class="bd-offcanvas-m-line line--2"></span><span
+                                    class="bd-offcanvas-m-line line--3"></span>
                             </span>
                         </button>
                     </div>
                 </div>
-               
+
                 <div class="bd-mobile-menu-smaller">
                     <div class="bd-offcanvas-menu mb-30">
                         <nav></nav>
                     </div>
                 </div>
-             
-            
+
+
 
                 <div class="bd-offcanvas-btn-wrap mb-30">
-             
+
                     <div class="bd-offcanvas-btn d-flex align-items-center gap-30">
-                        <a class="bd-btn btn-primary" href="#">Bilet Al</a>
-                        <a class="bd-btn btn-outline-border-secondary" href="#">Qeydiyyat</a>
+                        <a class="bd-btn btn-primary" href="#">{{ __('messages.menu_item8') }}</a>
+                        <a class="bd-btn btn-outline-border-secondary"
+                            href="#">{{ __('messages.menu_item9') }}</a>
                     </div>
                 </div>
-             
+
             </div>
         </div>
     </div>
@@ -208,7 +205,8 @@
                     <div class="bd-search-form">
                         <form action="#">
                             <div class="bd-search-input">
-                                <input type="search" name="search" placeholder="Type here to search ...">
+                                <input type="search" name="search"
+                                    placeholder="{{ __('messages.search_placeholder') }}">
                                 <div class="bd-search-submit">
                                     <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
                                 </div>
