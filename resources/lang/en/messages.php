@@ -26,6 +26,7 @@ return [
     'menu_item7' => 'Vacancies',
     'menu_item8' => 'Buy Ticket',
     'menu_item9' => 'Register',
+    'search' => 'Searched for:',
     'search_placeholder' => 'Search...',
 
     // footer

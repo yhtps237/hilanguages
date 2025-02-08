@@ -14,4 +14,6 @@ return [
     'students' => 'students',
     'comments' => 'comments',
     'register' => 'register',
+    'search' => 'search',
+
 ];

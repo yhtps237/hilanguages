@@ -26,6 +26,7 @@ return [
     'menu_item7' => 'Вакансии',
     'menu_item8' => 'Купить билет',
     'menu_item9' => 'Регистрация',
+    'search' => 'Искал:',
     'search_placeholder' => 'Поиск...',
 
     // footer

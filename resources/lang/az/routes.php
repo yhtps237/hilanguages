@@ -14,4 +14,5 @@ return [
     'students' => 'telebeler',
     'comments' => 'yorumlar',
     'register' => 'qeydiyyat',
+    'search' => 'axtar',
 ];

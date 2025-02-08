@@ -27,6 +27,7 @@ return [
     'menu_item7' => 'Vakansiya',
     'menu_item8' => 'Bilet al',
     'menu_item9' => 'Qeydiyyatdan keç',
+    'search' => 'Axtarış:',
     'search_placeholder' => 'Axtarış et...',
 
     // footer

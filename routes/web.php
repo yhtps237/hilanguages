@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +35,6 @@ Route::post('/send-email', [PageController::class, 'sendEmail'])->name('career.s
 Route::multilingual('/students', [PageController::class, 'students'])->name('students');
 Route::multilingual('/comments', [PageController::class, 'comments'])->name('comments');
 Route::multilingual('/register', [PageController::class, 'register'])->name('register');
+Route::multilingual('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/sitemap.xml', [PageController::class, 'sitemap']);

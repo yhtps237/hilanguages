@@ -10,13 +10,13 @@ function setLanguage(lang) {
     document.getElementById('selected-lang').innerText = langText[lang];
 
     // Seçilmiş dili yadda saxlayırıq
-    localStorage.setItem('selectedLanguage', lang);
+    // localStorage.setItem('selectedLanguage', lang);
 }
 
 // Səhifə yüklənəndə seçilmiş dili bərpa edirik
-window.onload = function() {
-    let savedLang = localStorage.getItem('selectedLanguage');
-    if (savedLang) {
-        setLanguage(savedLang); // Saxlanmış dili bərpa edirik
-    }
-};
+// window.onload = function() {
+//     let savedLang = localStorage.getItem('selectedLanguage');
+//     if (savedLang) {
+//         setLanguage(savedLang); // Saxlanmış dili bərpa edirik
+//     }
+// };

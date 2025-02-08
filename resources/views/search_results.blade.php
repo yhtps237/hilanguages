@@ -1,3 +1,10 @@
+<?php
+
+use Illuminate\Support\Str;
+use Carbon\Carbon;
+$languageCode = app()->getLocale();
+
+?>
 @extends('layouts.base')
 
 @section('title')
@@ -18,12 +25,12 @@
                         <div class="col-xl-12">
                             <div class="bd-breadcrumb style-two d-flex-center">
                                 <div class="bd-breadcrumb-content">
-                                    <h1 class="bd-breadcrumb-title">{{ __('messages.menu_item3') }}</h1>
+                                    <h1 class="bd-breadcrumb-title">{{ __('messages.search') }} {{ $query }}</h1>
                                     <div class="bd-breadcrumb-list">
                                         <span><a
                                                 href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
-                                        <span class="active">{{ __('messages.menu_item3') }}</span>
+                                        <span class="active">{{ __('messages.search') }} {{ $query }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -42,19 +49,17 @@
         <!-- course list area start -->
         <section class="bd-course-list-area section-space">
             <div class="container">
+                <div class="row justify-content-center ">
+                    <div class="col-xl-6 ">
+                        <div class="bd-section-wrapper section-title-space text-center ">
+                            <span class="bd-section-subtitle ">{{ __('messages.menu_item3') }}</span>
+                            <h2 class="bd-section-title mb-20 ">{{ __('messages.category_subtitle') }}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-xxl-12">
-                        <div class="bd-filter-course course-item text-center mb-50">
-                            <button class="filter-item active" data-filter="*">Hamısı</button>
-                            <button class="filter-item" data-filter=".cat1">Business</button>
-                            <button class="filter-item" data-filter=".cat2">Development</button>
-                            <button class="filter-item" data-filter=".cat3">Finance</button>
-                            <button class="filter-item" data-filter=".cat4">Lifestyle</button>
-                            <button class="filter-item" data-filter=".cat5">Marketing</button>
-                            <button class="filter-item" data-filter=".cat6">Programming</button>
-                            <button class="filter-item" data-filter=".cat7">Recipe</button>
-                            <button class="filter-item" data-filter=".cat8">Technology</button>
-                        </div>
                         <div class="row g-30 grid">
                             @foreach ($courses as $course)
                                 <div class="col-xl-4 col-lg-6 col-md-6 grid-item">
@@ -109,5 +114,70 @@
         </section>
         <!-- course list area end -->
 
+        <section class="bd-blog-area section-space-bottom fix ">
+            <div class="container ">
+                <div class="row justify-content-center ">
+                    <div class="col-xl-6 ">
+                        <div class="bd-section-title-wrapper section-title-space text-center ">
+                            <span class="bd-section-subtitle ">{{ __('messages.blog_title') }}</span>
+                            <h2 class="bd-section-title ">{{ __('messages.blog_desc') }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper blogSlideActivation swiper-shadow-add ">
+                    <div class="swiper-wrapper ">
+                        @foreach ($blogs as $blog)
+                            <div class="swiper-slide ">
+                                <article class="bd-blog-wrapper style-four ">
+                                    <div class="bd-blog-thumb ">
+                                        <a
+                                            href="{{ localized_route('blogDetail', ['slug' => $blog->{'slug_' . app()->getLocale()}], app()->getLocale()) }} ">
+                                            <img src="{{ $blog->getImageUrlAttribute() }}" alt="image "></a>
+                                    </div>
+                                    <div class="bd-blog-content ">
+                                        <div class="bd-blog-meta-list ">
+
+                                            <div class="bd-blog-meta-item ">
+                                                <span class="meta-icon ">
+                                                    <i class="fa-sharp fa-light fa-calendar-days "></i>
+                                                </span>
+                                                <span class="meta-text "><a
+                                                        href="{{ localized_route('blogDetail', ['slug' => $blog->{'slug_' . app()->getLocale()}], app()->getLocale()) }} ">
+                                                        @php
+                                                            $date = Carbon::parse($blog->date);
+                                                        @endphp
+
+                                                        @if ($languageCode == 'az')
+                                                            {{ get_month($date->month) }} {{ $date->day }}
+                                                            {{ $date->year }}
+                                                        @else
+                                                            {{ $date->format('F') }} {{ $date->day }}
+                                                            {{ $date->year }}
+                                                        @endif
+                                                    </a></span>
+                                            </div>
+                                        </div>
+                                        <h5 class="title underline "><a
+                                                href="{{ localized_route('blogDetail', ['slug' => $blog->{'slug_' . app()->getLocale()}], app()->getLocale()) }}">
+                                                {{ getLocalizedField($blog, 'head') }}</a></h5>
+                                        <p>{{ Str::limit(strip_tags(getLocalizedField($blog, 'content')), 100) }}</p>
+                                        <div class=" ">
+                                            <div class="icon-text-btn p-relative ">
+                                                <a
+                                                    href="{{ localized_route('blogDetail', ['slug' => $blog->{'slug_' . app()->getLocale()}], app()->getLocale()) }}">
+                                                    <span>Ətraflı</span>
+                                                    <i class="fa-regular fa-arrow-right-long "></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="bd-blog-pagination bd-dots-pagination has-primary "></div>
+                </div>
+            </div>
+        </section>
     </main>
 @endsection

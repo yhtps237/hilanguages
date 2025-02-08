@@ -82,8 +82,9 @@ $languageCode = app()->getLocale();
                             <div class="bd-blog-widget widget-search">
                                 <h5 class="bd-widget-title mb-20">Axtarış</h5>
                                 <div class="bd-sidebar-search">
-                                    <form class="bd-sidebar-search-form" action="#" method="get">
-                                        <input type="text" value="" required="" name="s"
+                                    <form class="bd-sidebar-search-form"
+                                        action="{{ localized_route('search', [], app()->getLocale()) }}" method="get">
+                                        <input type="text" value="" required="" name="key"
                                             placeholder="Axtarış">
                                         <button type="submit"> <i class="far fa-search"></i> </button>
                                     </form>

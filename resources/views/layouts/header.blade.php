@@ -120,7 +120,7 @@
                                 href="{{ localized_route('career', [], app()->getLocale()) }}">{{ __('messages.menu_item7') }}</a>
                         </li>
                         <li class="menu-item-has-children language-selector">
-                            <a href="#" id="selected-lang">Az</a>
+                            <a href="#" id="selected-lang">{{ app()->getLocale() }}</a>
                             <ul class="submenu">
                                 <li><a href="{{ current_route('az') }}">Az</a></li>
                                 <li><a href="{{ current_route('en') }}">En</a></li>
