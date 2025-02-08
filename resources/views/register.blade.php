@@ -158,7 +158,7 @@
                                         {{ __('messages.register_page_discount_help_text_2') }}
                                     </p>
                                     <p class="bd-coming-soon-subtitle">
-                                        {{ __('messages.register_page_discount_help_text_3') }}</p>
+                                        {{ config('discounted_course_name_' . app()->getLocale()) }}</p>
                                     <div class="bd-countdown mb-30" id="countdown2"
                                         data-endtime="{{ config('discount-date') }}">
                                         <div class="countdown-item" data-unit="days"></div>
