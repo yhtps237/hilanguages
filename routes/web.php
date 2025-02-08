@@ -33,3 +33,5 @@ Route::multilingual('/career', [PageController::class, 'career'])->name('career'
 Route::multilingual('/students', [PageController::class, 'students'])->name('students');
 Route::multilingual('/comments', [PageController::class, 'comments'])->name('comments');
 Route::multilingual('/register', [PageController::class, 'register'])->name('register');
+
+Route::get('/sitemap.xml', [PageController::class, 'sitemap']);

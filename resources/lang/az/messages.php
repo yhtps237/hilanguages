@@ -8,9 +8,6 @@ return [
     'more' => 'Ətraflı',
     'certificates' => 'Sertifikatlar',
 
-
-
-
     // header
     'menu_item1' => 'Kateqoriya',
     'menu_item2' => 'Ana səhifə',
@@ -188,14 +185,46 @@ return [
     'email' => 'E-poçt',
 
     // Career
-    'career_page_title' => 'haqqında',
-    'career_page_help_title' => 'haqqında',
-    'career_page_help_desc' => 'haqqında',
-    'career_page_info' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
-    'career_page_form_title' => 'haqqında',
+    'career_page_title' => 'HiLanguages Kursları',
+    'career_page_help_title' => 'Peşəkar insanlarla işləmək istəyir',
+    'career_page_help_desc' => 'Zəhmət olmasa bütün sahələri tam doldurun. HiLanguages qəbul komissiyası müraciətlərinizi nəzərdən keçirəcək və uyğun namizədlərlə görüş təyin edilərək müsahibə üçün dəvət ediləcək. Uğurlar!',
+    'career_page_info' => 'Məlumatlarınız',
+    'career_page_form_name' => 'Adınız Soyadınız',
+    'career_page_form_email' => 'E-poçt',
+    'career_page_form_phone_number' => 'Əlaqə nömrəsi',
+    'career_page_form_file' => 'Fayl Yüklə',
+    'career_page_form_note' => 'Qeyd',
+
+    // Register
+    'register_page_title' => 'HiLanguages-də Təhsil Alın',
+    'register_page_type_1' => 'Sürətli Qeydiyyat',
+    'register_page_type_2' => 'Kursunuzu Seçin',
+    'register_page_type_3' => 'Dərslərə Başlayın',
+    'register_page_type_1_item_1_title' => 'Qeydiyyatdan keçin',
+    'register_page_type_1_item_1_desc' => 'HiLanguages platformasında qeydiyyatdan keçərək ingilis dili öyrənməyə başlayın.',
+    'register_page_type_1_item_2_title' => 'Səviyyənizi Müəyyən Edin',
+    'register_page_type_1_item_2_desc' => 'Səviyyə təyin testindən keçərək sizin üçün uyğun olan kursu seçin və dərhal təhsilə başlayın.',
+
+    'register_page_type_2_item_1_title' => 'Kurslar Arasından Seçim Edin',
+    'register_page_type_2_item_1_desc' => 'Fərqli səviyyələr və kateqoriyalara uyğun kurslarımız arasından seçim edərək, sizin üçün ən uyğun proqramı tapın.',
+    'register_page_type_2_item_2_title' => 'Dərs Materiallarına Giriş əldə Edin',
+    'register_page_type_2_item_2_desc' => 'Video dərslər, testlər və interaktiv materiallarla ingilis dilini öyrənməyə başlayın.',
+
+    'register_page_type_3_item_1_title' => 'Canlı və Öz-Öyrənmə Dərslərinə Qoşulun',
+    'register_page_type_3_item_1_desc' => 'Canlı dərslərə qoşularaq müəllimlərdən birbaşa öyrənin və ya istədiyiniz vaxt öz-öyrənmə materialları ilə dərs keçin.',
+    'register_page_type_3_item_2_title' => 'Tapşırıqları Yerinə Yetirin və İnkişafınızı İzləyin',
+    'register_page_type_3_item_2_desc' => 'Tapşırıqları tamamlayın, imtahanlardan keçin və sertifikat əldə edərək dil bacarıqlarınızı inkişaf etdirin.',
+
+    'register_page_discount_title' => 'İngilis dili kursuna qeydiyyatdan keçin',
+    'register_page_discount_help_text' => 'HiLanguages ilə öyrənməyi həm əyləncəli, həm də praktik təcrübəyə çevirin!',
+    'register_page_discount_help_text_2' => 'Endirimdən istifadə etmək üçün qeydiyyatdan keçin',
+    'register_page_discount_help_text_3' => 'ELTA kurslarına 30% endirim!',
+
+    'register_page_form_parent_name' => 'Valideyn Adı Soyadı ',
+    'register_page_form_student_name' => 'Təhsil alanın Adı Soyadı ',
+    'register_page_form_email' => 'E-poçt ',
+    'register_page_form_phone_number' => 'Əlaqə nömrəsi ',
+    'register_page_form_course' => 'Kursu Seçin ',
+    'register_page_form_edu_type' => 'Tədris növü ',
+    'register_page_form_note' => 'Qeyd ',
 ];

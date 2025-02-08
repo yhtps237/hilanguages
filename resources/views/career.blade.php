@@ -23,7 +23,7 @@
                                         <span class="divider">
                                             <i class="fa-solid fa-angle-right"></i>
                                         </span>
-                                        <span class="active">Vakansiya</span>
+                                        <span class="active">{{ __('messages.menu_item7') }}</span>
                                     </div>
 
                                 </div>
@@ -41,9 +41,9 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="bd-section-wrapper section-title-space text-center">
-                            <h2 class="bd-section-title mb-20">HiLanguages Kursları </h2>
+                            <h2 class="bd-section-title mb-20">{{ __('messages.career_page_title') }}</h2>
                             <p class="bd-section-paragraph">
-                                Peşəkar insanlarla işləmək istəyir
+                                {{ __('messages.career_page_help_title') }}
                             </p>
 
                         </div>
@@ -53,9 +53,7 @@
                     <div class="col-xl-5 col-lg-5 col-md-12">
                         <div class="bd-joining-main-thumb">
                             <p class="bd-section-paragraph">
-                                Zəhmət olmasa bütün sahələri tam doldurun. HiLanguages qəbul komissiyası müraciətlərinizi
-                                nəzərdən keçirəcək və uyğun namizədlərlə görüş təyin edilərək müsahibə üçün dəvət ediləcək.
-                                Uğurlar!
+                                {{ __('messages.career_page_help_desc') }}
                             </p>
                             <img src="{{ asset('images/banner/elaqe.webp') }}" alt="image">
 
@@ -67,7 +65,8 @@
                             <div class="steps__form mb-20">
                                 <div class="bd-form-setup-panel">
                                     <div class="bd-form-step">
-                                        <a href="#formStepOne" class="bd-form-step-title bd-step-active">Məlumatlarınız</a>
+                                        <a href="#formStepOne"
+                                            class="bd-form-step-title bd-step-active">{{ __('messages.career_page_info') }}</a>
                                     </div>
                                     <div class="bd-form-step">
                                         <a href="#formStepThree" class="bd-form-step-title"></a>
@@ -79,11 +78,12 @@
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="parentName">Adınız Soyadınız <span>*</span></label>
+                                                <label for="parentName">{{ __('messages.career_page_form_name') }}
+                                                    <span>*</span></label>
                                             </div>
                                             <div class="form-input">
                                                 <input name="parentName" id="parentName" type="text"
-                                                    placeholder="Adınız Soyadınız" required>
+                                                    placeholder="{{ __('messages.career_page_form_name') }}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -91,30 +91,34 @@
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="email">E-poçt <span>*</span></label>
+                                                <label for="email">{{ __('messages.career_page_form_email') }}
+                                                    <span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <input name="email" id="email" type="email" placeholder="E-poçt"
+                                                <input name="email" id="email" type="email"
+                                                    placeholder="{{ __('messages.career_page_form_email') }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-input-box">
+                                            <div class="form-input-title">
+                                                <label for="phone">{{ __('messages.career_page_form_phone_number') }}
+                                                    <span>*</span></label>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="phone" id="phone" type="text"
+                                                    placeholder="{{ __('messages.career_page_form_phone_number') }}"
                                                     required>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-input-box">
-                                            <div class="form-input-title">
-                                                <label for="phone">Əlaqə nömrəsi <span>*</span></label>
-                                            </div>
-                                            <div class="form-input">
-                                                <input name="phone" id="phone" type="text"
-                                                    placeholder="Əlaqə nömrəsi" required>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="fileUpload">Fayl Yüklə <span>*</span></label>
+                                                <label for="fileUpload">{{ __('messages.career_page_form_file') }}
+                                                    <span>*</span></label>
                                             </div>
                                             <div class="form-input">
                                                 <input type="file" name="fileUpload" id="fileUpload" required>
@@ -125,15 +129,17 @@
                                     <div class="col-md-12">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="note">Qeyd <span>*</span></label>
+                                                <label for="note">{{ __('messages.career_page_form_note') }}
+                                                    <span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <textarea id="note" rows="2" placeholder="Qeyd"></textarea>
+                                                <textarea id="note" rows="2" placeholder="{{ __('messages.career_page_form_note') }}"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mt-30">
-                                        <button class="nextBtn bd-btn btn-primary" type="submit">Göndər</button>
+                                        <button class="nextBtn bd-btn btn-primary"
+                                            type="submit">{{ __('messages.contac_page_form_send') }}</button>
                                     </div>
                                 </div>
                             </form>

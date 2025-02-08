@@ -11,6 +11,7 @@ use App\Models\PhotoGallery;
 use App\Models\Student;
 use App\Models\VideoGallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class PageController extends Controller
 {
@@ -135,5 +136,72 @@ class PageController extends Controller
     {
         $videos = CommentVideo::all();
         return view('comments', compact('videos'));
+    }
+
+    public function sitemap()
+    {
+        $baseUrl = config('app.url');
+        $languages = ['az', 'en', 'ru'];
+
+        // Common URLs for static pages
+        $staticUrls = collect([
+            '/' => ['index', '/'],
+            '/about' => ['about', '/about'],
+            '/faq' => ['faq', '/faq'],
+            '/our-team' => ['ourTeam', '/our-team'],
+            '/blog' => ['blog', '/blog'],
+            '/courses' => ['course', '/courses'],
+            '/photo-gallery' => ['photoGallery', '/photo-gallery'],
+            '/video-gallery' => ['videoGallery', '/video-gallery'],
+            '/contact' => ['contact', '/contact'],
+            '/career' => ['career', '/career'],
+            '/students' => ['students', '/students'],
+            '/comments' => ['comments', '/comments'],
+            '/register' => ['register', '/register'],
+        ])->flatMap(function ($route) use ($baseUrl, $languages) {
+            return collect($languages)->map(fn($lang) => [
+                'loc' => localized_route($route[0], [], $lang),
+                'lastmod' => now()->toAtomString(),
+            ]);
+        });
+        // Dynamic blog URLs
+        // $blogUrls = Blog::all()->flatMap(function ($blog) use ($baseUrl, $languages) {
+        //     return collect($languages)->map(fn($lang) => [
+        //         'loc' => "{$baseUrl}/{$lang}/blog/" . ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru)),
+        //         'lastmod' => $blog->updated_at->toAtomString(),
+        //     ]);
+        // });
+        $blogUrls = Blog::all()->flatMap(function ($blog) use ($languages) {
+            return collect($languages)->map(fn($lang) => [
+                'loc' => localized_route('blogDetail', ['slug' => ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru))], $lang),
+                'lastmod' => $blog->updated_at->toAtomString(),
+            ]);
+        });
+
+
+        // Dynamic our team URLs
+        $ourTeamUrls = OurTeam::all()->flatMap(function ($member) use ($baseUrl, $languages) {
+            return collect($languages)->map(fn($lang) => [
+                'loc' => localized_route('ourTeamDetail', ['slug' => ($lang == 'az' ? $member->slug_az : ($lang == 'en' ? $member->slug_en : $member->slug_ru))], $lang),
+                'lastmod' => $member->updated_at->toAtomString(),
+            ]);
+        });
+
+        // Dynamic course URLs
+        $courseUrls = Course::all()->flatMap(function ($course) use ($baseUrl, $languages) {
+            return collect($languages)->map(fn($lang) => [
+                'loc' => localized_route('courseDetail', ['slug' => ($lang == 'az' ? $course->slug_az : ($lang == 'en' ? $course->slug_en : $course->slug_ru))], $lang),
+                'lastmod' => $course->updated_at->toAtomString(),
+            ]);
+        });
+
+        // Merge all URLs
+        // $allUrls = $staticUrls->merge($blogUrls)->merge($ourTeamUrls)->merge($serviceUrls);
+
+        // return Response::make(view('sitemap', compact('allUrls')), 200, [
+        //     'Content-Type' => 'application/xml',
+        return Response::make(view('sitemap', compact('staticUrls', 'blogUrls', 'ourTeamUrls', 'courseUrls')), 200, [
+            'Content-Type' => 'application/xml',
+        ]);
     }
 }

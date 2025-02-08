@@ -23,9 +23,9 @@
                                         <span class="divider">
                                             <i class="fa-solid fa-angle-right"></i>
                                         </span>
-                                        <span class="active">Əlaqə</span>
+                                        <span class="active">{{ __('messages.menu_item9') }}</span>
                                     </div>
-                                    <h1 class="bd-breadcrumb-title fontregs">Qeydiyyatdan keç</h1>
+                                    <h1 class="bd-breadcrumb-title fontregs">{{ __('messages.menu_item9') }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                 <div class="row g-60 justify-content-center">
                     <div class="col-xl-4 col-lg-6">
                         <div class="bd-section-wrapper section-title-space">
-                            <h2 class="bd-section-title">HiLanguages-də Təhsil Alın</h2>
+                            <h2 class="bd-section-title">{{ __('messages.register_page_title') }}</h2>
                         </div>
                         <div class="tab-style-four">
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -48,21 +48,21 @@
                                     <button class="nav-link active" id="pills-item-one-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-item-one" type="button" role="tab"
                                         aria-controls="pills-item-one" aria-selected="true">
-                                        Sürətli Qeydiyyat
+                                        {{ __('messages.register_page_type_1') }}
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-item-two-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-item-two" type="button" role="tab"
                                         aria-controls="pills-item-two" aria-selected="false">
-                                        Kursunuzu Seçin
+                                        {{ __('messages.register_page_type_2') }}
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-item-three-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-item-three" type="button" role="tab"
                                         aria-controls="pills-item-three" aria-selected="false">
-                                        Dərslərə Başlayın
+                                        {{ __('messages.register_page_type_3') }}
                                     </button>
                                 </li>
                             </ul>
@@ -78,14 +78,13 @@
                                             <img src="{{ asset('images/joining/journey-1.webp') }}" alt="image">
                                         </div>
                                         <div class="bd-joining-content mb-30">
-                                            <h6 class="title">Qeydiyyatdan keçin</h6>
-                                            <p class="description">HiLanguages platformasında qeydiyyatdan keçərək ingilis
-                                                dili öyrənməyə başlayın.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_1_item_1_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_1_item_1_desc') }}</p>
                                         </div>
                                         <div class="bd-joining-content">
-                                            <h6 class="title">Səviyyənizi Müəyyən Edin</h6>
-                                            <p class="description">Səviyyə təyin testindən keçərək sizin üçün uyğun olan
-                                                kursu seçin və dərhal təhsilə başlayın.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_1_item_2_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_1_item_2_desc') }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -96,14 +95,14 @@
                                             <img src="{{ asset('images/joining/journey-2.webp') }}" alt="image">
                                         </div>
                                         <div class="bd-joining-content mb-30">
-                                            <h6 class="title">Kurslar Arasından Seçim Edin</h6>
-                                            <p class="description">Fərqli səviyyələr və kateqoriyalara uyğun kurslarımız
-                                                arasından seçim edərək, sizin üçün ən uyğun proqramı tapın.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_2_item_1_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_2_item_1_desc') }}
+                                            </p>
                                         </div>
                                         <div class="bd-joining-content">
-                                            <h6 class="title">Dərs Materiallarına Giriş əldə Edin</h6>
-                                            <p class="description">Video dərslər, testlər və interaktiv materiallarla
-                                                ingilis dilini öyrənməyə başlayın.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_2_item_2_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_2_item_2_desc') }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -114,14 +113,14 @@
                                             <img src="{{ asset('images/joining/journey-3.webp') }}" alt="image">
                                         </div>
                                         <div class="bd-joining-content mb-30">
-                                            <h6 class="title">Canlı və Öz-Öyrənmə Dərslərinə Qoşulun</h6>
-                                            <p class="description">Canlı dərslərə qoşularaq müəllimlərdən birbaşa öyrənin və
-                                                ya istədiyiniz vaxt öz-öyrənmə materialları ilə dərs keçin.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_3_item_1_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_3_item_1_desc') }}
+                                            </p>
                                         </div>
                                         <div class="bd-joining-content">
-                                            <h6 class="title">Tapşırıqları Yerinə Yetirin və İnkişafınızı İzləyin</h6>
-                                            <p class="description">Tapşırıqları tamamlayın, imtahanlardan keçin və
-                                                sertifikat əldə edərək dil bacarıqlarınızı inkişaf etdirin.</p>
+                                            <h6 class="title">{{ __('messages.register_page_type_3_item_2_title') }}</h6>
+                                            <p class="description">{{ __('messages.register_page_type_3_item_2_desc') }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -141,9 +140,9 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="bd-section-wrapper section-title-space text-center">
-                            <h2 class="bd-section-title mb-20">İngilis dili kursuna qeydiyyatdan keçin</h2>
+                            <h2 class="bd-section-title mb-20">{{ __('messages.register_page_discount_title') }}</h2>
                             <p class="bd-section-paragraph">
-                                HiLanguages ilə öyrənməyi həm əyləncəli, həm də praktik təcrübəyə çevirin!
+                                {{ __('messages.register_page_discount_help_text') }}
                             </p>
                         </div>
                     </div>
@@ -155,9 +154,11 @@
                                 <div class="bd-coming-soon-content">
 
 
-                                    <p class="bd-coming-soon-subtitle">Endirimdən istifadə etmək üçün qeydiyyatdan keçin
+                                    <p class="bd-coming-soon-subtitle">
+                                        {{ __('messages.register_page_discount_help_text_2') }}
                                     </p>
-                                    <p class="bd-coming-soon-subtitle">ELTA kurslarına 30% endirim!</p>
+                                    <p class="bd-coming-soon-subtitle">
+                                        {{ __('messages.register_page_discount_help_text_3') }}</p>
                                     <div class="bd-countdown mb-30" id="countdown2"
                                         data-endtime="{{ config('discount-date') }}">
                                         <div class="countdown-item" data-unit="days"></div>
@@ -180,7 +181,7 @@
                                 <div class="bd-form-setup-panel">
                                     <div class="bd-form-step">
                                         <a href="#formStepOne"
-                                            class="bd-form-step-title bd-step-active">Məlumatlarınız</a>
+                                            class="bd-form-step-title bd-step-active">{{ __('messages.career_page_info') }}</a>
                                     </div>
                                     <div class="bd-form-step">
                                         <a href="#formStepThree" class="bd-form-step-title"></a>
@@ -192,32 +193,12 @@
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="parentName">Valideyn Adı Soyadı <span>*</span></label>
+                                                <label
+                                                    for="parentName">{{ __('messages.register_page_form_parent_name') }}<span>*</span></label>
                                             </div>
                                             <div class="form-input">
                                                 <input name="parentName" id="parentName" type="text"
-                                                    placeholder="Valideyn Adı Soyadı" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-input-box">
-                                            <div class="form-input-title">
-                                                <label for="studentName">Təhsil alanın Adı Soyadı <span>*</span></label>
-                                            </div>
-                                            <div class="form-input">
-                                                <input name="studentName" id="studentName" type="text"
-                                                    placeholder="Təhsil alanın Adı Soyadı" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-input-box">
-                                            <div class="form-input-title">
-                                                <label for="email">E-poçt <span>*</span></label>
-                                            </div>
-                                            <div class="form-input">
-                                                <input name="email" id="email" type="email" placeholder="E-poçt"
+                                                    placeholder="{{ __('messages.register_page_form_parent_name') }}"
                                                     required>
                                             </div>
                                         </div>
@@ -225,22 +206,51 @@
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="phone">Əlaqə nömrəsi <span>*</span></label>
+                                                <label
+                                                    for="studentName">{{ __('messages.register_page_form_student_name') }}<span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <input name="phone" id="phone" type="text"
-                                                    placeholder="Əlaqə nömrəsi" required>
+                                                <input name="studentName" id="studentName" type="text"
+                                                    placeholder="{{ __('messages.register_page_form_student_name') }}"
+                                                    required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="course">Kursu Seçin <span>*</span></label>
+                                                <label
+                                                    for="email">{{ __('messages.register_page_form_email') }}<span>*</span></label>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="email" id="email" type="email"
+                                                    placeholder="{{ __('messages.register_page_form_email') }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-input-box">
+                                            <div class="form-input-title">
+                                                <label
+                                                    for="phone">{{ __('messages.register_page_form_phone_number') }}<span>*</span></label>
+                                            </div>
+                                            <div class="form-input">
+                                                <input name="phone" id="phone" type="text"
+                                                    placeholder="{{ __('messages.register_page_form_phone_number') }}"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-input-box">
+                                            <div class="form-input-title">
+                                                <label
+                                                    for="course">{{ __('messages.register_page_form_course') }}<span>*</span></label>
                                             </div>
                                             <div class="form-input">
                                                 <select name="course" id="course" required>
-                                                    <option value="" disabled selected>Kursu seçin</option>
+                                                    <option value="" disabled selected>
+                                                        {{ __('messages.register_page_form_course') }}</option>
                                                     <option value="TOEFL">TOEFL</option>
                                                     <option value="IELTS">IELTS</option>
                                                     <option value="ELTA">ELTA</option>
@@ -251,11 +261,13 @@
                                     <div class="col-md-6">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="mode">Tədris növü <span>*</span></label>
+                                                <label
+                                                    for="mode">{{ __('messages.register_page_form_edu_type') }}<span>*</span></label>
                                             </div>
                                             <div class="form-input">
                                                 <select name="mode" id="mode" required>
-                                                    <option value="" disabled selected>Tədris növü</option>
+                                                    <option value="" disabled selected>
+                                                        {{ __('messages.register_page_form_edu_type') }}</option>
                                                     <option value="Online">Online</option>
                                                     <option value="Əyani">Əyani</option>
                                                 </select>
@@ -265,15 +277,17 @@
                                     <div class="col-md-12">
                                         <div class="form-input-box">
                                             <div class="form-input-title">
-                                                <label for="note">Qeyd <span>*</span></label>
+                                                <label
+                                                    for="note">{{ __('messages.register_page_form_note') }}<span>*</span></label>
                                             </div>
                                             <div class="form-input">
-                                                <textarea id="note" rows="2" placeholder="Qeyd"></textarea>
+                                                <textarea id="note" rows="2" placeholder="{{ __('messages.register_page_form_note') }}"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mt-30">
-                                        <button class="nextBtn bd-btn btn-primary" type="submit">Göndər</button>
+                                        <button class="nextBtn bd-btn btn-primary"
+                                            type="submit">{{ __('messages.contac_page_form_send') }}</button>
                                     </div>
                                 </div>
                             </form>

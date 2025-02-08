@@ -3,17 +3,15 @@
 
 return [
     'about' => 'haqqinda',
-    'blog' => 'xeberler',
     'faq' => 'faq',
-    'courses' => 'kurslar',
     'our-team' => 'komandamız',
-    'contact' => 'elaqe',
+    'blog' => 'xeberler',
+    'courses' => 'kurslar',
     'photo-gallery' => 'foto-qalereya',
     'video-gallery' => 'video-qalereya',
-    'courses' => 'kurslar',
+    'contact' => 'elaqe',
+    'career' => 'vakansiya',
     'students' => 'telebeler',
+    'comments' => 'yorumlar',
     'register' => 'qeydiyyat',
-
-
-
 ];
