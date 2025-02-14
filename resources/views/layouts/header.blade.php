@@ -31,7 +31,7 @@
             <div class="bd-header-left">
                 <div class="bd-header-logo">
                     <a href="{{ localized_route('index', [], app()->getLocale()) }}">
-                        <img src="{{ asset('images/logo/hilanguage.png') }}" alt="logo">
+                        <img src="{{ asset('images/logo/logo.svg') }}" alt="ingilis dili kursları">
                     </a>
                 </div>
                 <div class="bd-header-category d-none d-lg-block">

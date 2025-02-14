@@ -2,7 +2,7 @@
 
 
 return [
-    'project_title' => 'Hi Language | Курсы английского языка',
+    'project_title' => 'Hi Languages | Курсы английского языка',
     'project_title_small' => 'Hi Languages <span class="text-primary"> Курсы</span> английского языка',
     'more' => 'Подробнее',
     'certificates' => 'Сертификаты',

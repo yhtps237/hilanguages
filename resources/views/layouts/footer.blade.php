@@ -7,8 +7,8 @@
                         <div class="bd-footer-widget-content">
                             <div class="bd-footer-widget-logo">
                                 <a href="{{ localized_route('index', [], app()->getLocale()) }}">
-                                    <img class="footerlogo" src="{{ asset('images/logo/hilanguage.png') }}"
-                                        alt="image">
+                                    <img class="footerlogo" src="{{ asset('images/logo/logo.svg') }}"
+                                        alt="ingilis dili kurslari">
                                 </a>
                             </div>
                             <p class="bd-footer-widget-description">{{ __('messages.footer_desc') }}</p>

@@ -3,7 +3,7 @@
 
 return [
     // general
-    'project_title' => 'Hi Language | İngilis dili kursları',
+    'project_title' => 'Hi Languages | İngilis dili kursları',
     'project_title_small' => 'Hi Languages <span class="text-primary"> Kursları</span> İngilis dili kursları',
     'more' => 'Ətraflı',
     'certificates' => 'Sertifikatlar',
@@ -26,7 +26,7 @@ return [
     'menu_item6' => 'Əlaqə',
     'menu_item7' => 'Vakansiya',
     'menu_item8' => 'Bilet al',
-    'menu_item9' => 'Qeydiyyatdan keç',
+    'menu_item9' => 'Qeydiyyat',
     'search' => 'Axtarış:',
     'search_placeholder' => 'Axtarış et...',
 
@@ -84,7 +84,7 @@ return [
     'counter_title' => 'Endirim...',
     'counter_desc' => 'Qeydiyyatdan keçərək endirimdən yararlanın!',
 
-    'why_us_title' => 'Niyə HiLanguage?',
+    'why_us_title' => 'Niyə Hi Languages?',
     'why_us_desc' => 'Unikal Təkliflərimizi Araşdırın',
     'why_us_item1_title' => 'İxtisaslaşmış Kurslar',
     'why_us_item1_desc' => 'Tələbələrimizin müvafiq biliklərə
@@ -117,7 +117,7 @@ return [
     // about
     'about_page_title' => 'Bizim Missiyamız & Vizyonumuz',
     'about_page_subtitle' => 'Təhsilin Gələcəyinə Rəhbərlik edirik <span
-                            class="text-primary">HiLanguage</span>',
+                            class="text-primary">HiLanguages</span>',
     'about_page_mission_title' => 'Bizim Missiyamız',
     'about_page_mission_desc' => '<strong>HiLanguages</strong> olaraq, missiyamız tələbələri
                                 sürətlə dəyişən dünyada uğur qazanmaq üçün lazım olan bilik və bacarıqlarla gücləndirməkdir.

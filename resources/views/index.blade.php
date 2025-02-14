@@ -32,7 +32,7 @@ $languageCode = app()->getLocale();
                                         </circle>
                                     </svg>
                                 </div>
-                                <img src="{{ asset('images/logo/preloader-icon.png') }}" alt="">
+                                <img src="{{ asset('images/logo/logo.svg') }}" alt="">
                             </div>
                             <p class="bd-preloader-subtitle">Loading...</p>
                         </div>

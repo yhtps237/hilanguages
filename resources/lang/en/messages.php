@@ -2,7 +2,7 @@
 
 return [
     // general
-    'project_title' => 'Hi Language | English Language Courses',
+    'project_title' => 'Hi Languages | English Language Courses',
     'project_title_small' => 'Hi Languages <span class="text-primary"> Courses</span> English Language Courses',
     'more' => 'More',
     'certificates' => 'Certificates',
