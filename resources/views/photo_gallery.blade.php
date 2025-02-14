@@ -57,13 +57,13 @@
                         <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                             <div class="bd-campus-gallery-wrapper">
                                 <a href="#gallery{{ $loop->index + 1 }}" class="bd-campus-gallery-thumb">
-                                    <img src="{{ $gallery->getImageUrlAttribute() }}" alt="image">
+                                    <img src="{{ $gallery->getImageUrlAttribute() }}" alt="{{ $gallery->alternative }}">
                                 </a>
                                 <h6 class="bd-campus-gallery-title">{{ getLocalizedField($gallery, 'head') }}</h6>
                                 <div id="gallery{{ $loop->index + 1 }}" class="hidden">
                                     @foreach ($gallery->photos as $photo)
                                         <a href="{{ $photo->getImageUrlAttribute() }}" title="Snapshots of Campus - 01"
-                                            alt="image"></a>
+                                            alt="{{ $photo->alternative }}"></a>
                                     @endforeach
                                 </div>
                             </div>

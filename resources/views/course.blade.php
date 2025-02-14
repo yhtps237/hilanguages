@@ -70,7 +70,8 @@
 
                                             </div>
                                             <div class="bd-course-thumb-bg bg-1"><img
-                                                    src="{{ $course->getImage2UrlAttribute() }}" alt="images"></div>
+                                                    src="{{ $course->getImage2UrlAttribute() }}"
+                                                    alt="{{ getLocalizedField($course, 'head') }}"></div>
 
 
                                             {{-- <div class="bd-course-overly-title fs-200 text-white">TOEFL</div> --}}

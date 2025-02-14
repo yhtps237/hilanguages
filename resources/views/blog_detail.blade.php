@@ -70,7 +70,7 @@ $languageCode = app()->getLocale();
                     <div class="col-xxl-8 col-xl-8 col-xxl-8 col-lg-8">
                         <div class="bd-postbox-wrapper">
                             <div class="bd-blog-feature-thumb"><img src="{{ asset('storage/' . $blog->image) }}"
-                                    alt="blog feature image">
+                                    alt="{{ getLocalizedField($blog, 'head') }}">
                             </div>
                             <div class="bd-postbox-content">
                                 {!! getLocalizedField($blog, 'content') !!}
@@ -102,7 +102,7 @@ $languageCode = app()->getLocale();
                                                 <a
                                                     href="{{ localized_route('blogDetail', ['slug' => $latestBlog->{'slug_' . app()->getLocale()}], app()->getLocale()) }}"><img
                                                         src="{{ asset('storage/' . $latestBlog->image) }}"
-                                                        alt="image"></a>
+                                                        alt="{{ getLocalizedField($latestBlog, 'head') }}"></a>
                                             </div>
                                             <div class="bd-recent-post-content">
                                                 <div class="bd-recent-post-meta">

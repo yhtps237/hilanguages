@@ -53,7 +53,8 @@
                                     <div class="bd-instructor-thumb-wrap">
                                         <a
                                             href="{{ localized_route('ourTeamDetail', ['slug' => $personal->{'slug_' . app()->getLocale()}], app()->getLocale()) }}"><img
-                                                src="{{ asset('storage/' . $personal->image) }}" alt="image"></a>
+                                                src="{{ asset('storage/' . $personal->image) }}"
+                                                alt="{{ getLocalizedField($personal, 'name') }}"></a>
                                     </div>
                                     <div class="bd-instructor-info">
                                         <h6 class="name underline"><a

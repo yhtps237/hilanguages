@@ -44,7 +44,7 @@
                                                             <a href="{{ asset('storage/' . $certificate->image) }}"
                                                                 class="popup-image"><img
                                                                     src="{{ asset('storage/' . $certificate->image) }}"
-                                                                    alt="certificate"></a>
+                                                                    alt="{{ $certificate->alternative }}"></a>
                                                         </div>
                                                     </div>
                                                 </div>
