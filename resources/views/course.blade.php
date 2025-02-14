@@ -1,9 +1,14 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.menu_item3') }}
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ __('messages.menu_item3') }}">
+    <meta property="og:description"
+        content="@foreach ($courses as $course) {{ getLocalizedField($course, 'head') }}, @endforeach">
+    <meta name="description" content="@foreach ($courses as $course) {{ getLocalizedField($course, 'head') }}, @endforeach">
 @endsection
 
 @section('content')

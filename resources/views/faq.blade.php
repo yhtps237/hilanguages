@@ -1,9 +1,12 @@
 @extends('layouts.base')
 
 @section('title')
+    Faq's
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="Faq's">
+    <meta name="description" content="@foreach ($faqsGeneral as $faq) {{ getLocalizedField($faq, 'head') }}, @endforeach">
 @endsection
 
 @section('content')

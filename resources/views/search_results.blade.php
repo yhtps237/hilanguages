@@ -8,6 +8,7 @@ $languageCode = app()->getLocale();
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.search') }}
 @endsection
 
 @section('meta')

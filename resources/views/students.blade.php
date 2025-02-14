@@ -1,6 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.students_page_title') }}
 @endsection
 
 @section('meta')

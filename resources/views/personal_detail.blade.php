@@ -1,9 +1,13 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ getLocalizedField($personal, 'head') }}
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ getLocalizedField($personal, 'name') }}">
+    <meta property="og:description" content="{{ getLocalizedField($personal, 'about') }}">
+    <meta name="description" content="{{ getLocalizedField($personal, 'about') }}">
 @endsection
 
 @section('content')

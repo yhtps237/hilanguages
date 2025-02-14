@@ -1,9 +1,11 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.contact_page_title') }}
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ __('messages.contact_page_title') }}">
 @endsection
 
 @section('content')

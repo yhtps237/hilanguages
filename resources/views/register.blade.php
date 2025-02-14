@@ -1,9 +1,11 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.menu_item9') }}
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ __('messages.menu_item9') }}">
 @endsection
 
 @section('content')
@@ -79,7 +81,8 @@
                                         </div>
                                         <div class="bd-joining-content mb-30">
                                             <h6 class="title">{{ __('messages.register_page_type_1_item_1_title') }}</h6>
-                                            <p class="description">{{ __('messages.register_page_type_1_item_1_desc') }}</p>
+                                            <p class="description">{{ __('messages.register_page_type_1_item_1_desc') }}
+                                            </p>
                                         </div>
                                         <div class="bd-joining-content">
                                             <h6 class="title">{{ __('messages.register_page_type_1_item_2_title') }}</h6>

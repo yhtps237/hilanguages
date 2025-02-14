@@ -1,9 +1,13 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ getLocalizedField($blog, 'head') }}
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ getLocalizedField($course, 'head') }}">
+    <meta property="og:description" content="{{ getLocalizedField($course, 'description') }}">
+    <meta name="description" content="{{ getLocalizedField($course, 'description') }}">
 @endsection
 
 @section('content')
@@ -20,7 +24,8 @@
                                 <div class="bd-breadcrumb-content">
                                     <h1 class="bd-breadcrumb-title">Kurslarımız</h1>
                                     <div class="bd-breadcrumb-list">
-                                        <span><a href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
+                                        <span><a
+                                                href="{{ localized_route('index', [], app()->getLocale()) }}">HiLanguages</a></span>
                                         <span class="divider"><i class="fa-regular fa-angle-right"></i></span>
                                         <span class="active">Kurslarımız</span>
                                     </div>

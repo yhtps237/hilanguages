@@ -13,6 +13,9 @@ $languageCode = app()->getLocale();
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ getLocalizedField($blog, 'head') }}">
+    <meta property="og:description" content="{{ getLocalizedField($blog, 'description') }}">
+    <meta name="description" content="{{ getLocalizedField($blog, 'description') }}">
 @endsection
 
 @section('content')

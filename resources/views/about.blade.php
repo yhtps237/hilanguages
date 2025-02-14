@@ -1,6 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
+    {{ __('messages.menu_item2_1') }}
 @endsection
 
 @section('meta')
