@@ -1,10 +1,13 @@
 @extends('layouts.base')
 
 @section('title')
-    {{ __('messages.menu_item2_1') }}
+    {{ __('messages.haqqimizda_title') }}
 @endsection
 
 @section('meta')
+<meta property="og:title" content="{{ __('messages.haqqimizda_title') }}">
+    <meta property="og:description" content="{{ __('messages.about_page_values_item_1_desc') }}">
+    <meta name="description" content="{{ __('messages.about_page_values_item_1_desc') }}">
 @endsection
 
 @section('content')

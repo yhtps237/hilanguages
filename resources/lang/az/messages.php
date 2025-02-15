@@ -229,4 +229,14 @@ return [
     'register_page_form_course' => 'Kursu Seçin ',
     'register_page_form_edu_type' => 'Tədris növü ',
     'register_page_form_note' => 'Qeyd ',
+
+
+    // title
+    'haqqimizda_title'=>'Haqqımızda',
+    'yorum'=>'Yorumlar',
+
+    // description
+    'home_desc'=>'İngilis dili kursu – Sürətli və effektiv ingilis dili öyrənmə! Peşəkar müəllimlər, fərdi və qrup dərsləri, onlayn və əyani tədris. İngilis dilində sərbəst danışmaq üçün qeydiyyatdan keçin!'
+   
+
 ];

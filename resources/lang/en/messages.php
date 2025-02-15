@@ -180,4 +180,12 @@ return [
     'register_page_form_course' => 'Choose Course',
     'register_page_form_edu_type' => 'Type of Education',
     'register_page_form_note' => 'Note',
+
+     // title
+     'haqqimizda_title'=>'About',
+     'yorum'=>'Comments',
+ 
+     // description
+     'home_desc'=>'English language course – Fast and effective English learning! Professional teachers, individual and group lessons, online and in-person training. Register now to speak English fluently!'
+    
 ];

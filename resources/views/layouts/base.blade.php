@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="robots" content="noindex, nofollow" />.
     <title>
         @yield('title')
     </title>
-    <meta name="description" content="">
+    <link rel="canonical" href="https://hilanguages.az/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo/favicon.png') }}">
@@ -24,7 +25,35 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     @yield('meta')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "HiLanguages",
+        "url": "http://hilanguages.az/",
+        "logo": "https://hilanguages.az/images/logo/logo.svg",
 
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Akademik Həsən Əliyev küçəsi, 80D",
+            "addressLocality": "Baku",
+            "addressRegion": "Baku",
+            "postalCode": "AZ1000",
+            "addressCountry": "AZ"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+994 77 277 18 18",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Azerbaijani", "Russian"]
+        },
+
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61572419010485",
+            "https://www.instagram.com/hi__languages/"
+        ]
+    }
+    </script>
 </head>
 
 <body>

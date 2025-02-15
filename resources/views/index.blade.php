@@ -12,6 +12,9 @@ $languageCode = app()->getLocale();
 @endsection
 
 @section('meta')
+    <meta property="og:title" content="{{ __('messages.project_title') }}">
+    <meta property="og:description" content="{{ __('messages.home_desc') }}">
+    <meta name="description" content="{{ __('messages.home_desc') }}">
 @endsection
 
 
@@ -32,7 +35,7 @@ $languageCode = app()->getLocale();
                                         </circle>
                                     </svg>
                                 </div>
-                                <img src="{{ asset('images/logo/logo.svg') }}" alt="">
+                                <img src="{{ asset('images/logo/logo.svg     ') }}" alt="">
                             </div>
                             <p class="bd-preloader-subtitle">Loading...</p>
                         </div>
