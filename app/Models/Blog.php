@@ -23,6 +23,10 @@ class Blog extends Model
         'description_en',
         'description_ru',
         'keyword',
+        'date',
+        'slug_az',
+        'slug_en',
+        'slug_ru',
     ];
 
     /**
