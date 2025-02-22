@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
-    {{ getLocalizedField($blog, 'head') }}
+    {{ getLocalizedField($course, 'head') }}
 @endsection
 
 @section('meta')
