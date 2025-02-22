@@ -144,3 +144,16 @@ $languageCode = app()->getLocale();
 
     </main>
 @endsection
+
+@section('custom-js')
+    <script>
+        $(document).ready(function() {
+            var lang_az = document.getElementById('lang_az');
+            var lang_en = document.getElementById('lang_en');
+            var lang_ru = document.getElementById('lang_ru');
+            lang_az.href = "{{ localized_route('blogDetail', ['slug' => $blog->slug_az], 'az') }}";
+            lang_en.href = "{{ localized_route('blogDetail', ['slug' => $blog->slug_en], 'en') }}";
+            lang_ru.href = "{{ localized_route('blogDetail', ['slug' => $blog->slug_ru], 'ru') }}";
+        });
+    </script>
+@endsection

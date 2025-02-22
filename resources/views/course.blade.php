@@ -49,17 +49,6 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xxl-12">
-                        <div class="bd-filter-course course-item text-center mb-50">
-                            <button class="filter-item active" data-filter="*">Hamısı</button>
-                            <button class="filter-item" data-filter=".cat1">Business</button>
-                            <button class="filter-item" data-filter=".cat2">Development</button>
-                            <button class="filter-item" data-filter=".cat3">Finance</button>
-                            <button class="filter-item" data-filter=".cat4">Lifestyle</button>
-                            <button class="filter-item" data-filter=".cat5">Marketing</button>
-                            <button class="filter-item" data-filter=".cat6">Programming</button>
-                            <button class="filter-item" data-filter=".cat7">Recipe</button>
-                            <button class="filter-item" data-filter=".cat8">Technology</button>
-                        </div>
                         <div class="row g-30 grid">
                             @foreach ($courses as $course)
                                 <div class="col-xl-4 col-lg-6 col-md-6 grid-item">

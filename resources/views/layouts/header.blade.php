@@ -122,9 +122,9 @@
                         <li class="menu-item-has-children language-selector">
                             <a href="#" id="selected-lang">{{ app()->getLocale() }}</a>
                             <ul class="submenu">
-                                <li><a href="{{ current_route('az') }}">Az</a></li>
-                                <li><a href="{{ current_route('en') }}">En</a></li>
-                                <li><a href="{{ current_route('ru') }}">Ru</a></li>
+                                <li><a id="lang_az" href="{{ current_route('az') }}">Az</a></li>
+                                <li><a id="lang_en" href="{{ current_route('en') }}">En</a></li>
+                                <li><a id="lang_ru" href="{{ current_route('ru') }}">Ru</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -45,11 +45,10 @@ class PageController extends Controller
 
     public function blogDetail($slug)
     {
-        // $locale = app()->getLocale(); // Get current language
+        $locale = app()->getLocale(); // Get current language
 
         // Determine the correct column based on language
-        // $column = "slug_{$locale}";
-        $column = "slug_az";
+        $column = "slug_{$locale}";
 
         // Fetch the blog using the appropriate slug
         $blog = Blog::where($column, $slug)->firstOrFail();
@@ -69,10 +68,10 @@ class PageController extends Controller
 
     public function courseDetail($slug)
     {
-        // $locale = app()->getLocale(); // Get current language
+        $locale = app()->getLocale(); // Get current language
 
         // Determine the correct column based on language
-        $column = "slug_az";
+        $column = "slug_{$locale}";
 
         $course = Course::where($column, $slug)->firstOrFail();
 
@@ -96,10 +95,10 @@ class PageController extends Controller
 
     public function ourTeamDetail($slug)
     {
-        // $locale = app()->getLocale(); // Get current language
+        $locale = app()->getLocale(); // Get current language
 
         // Determine the correct column based on language
-        $column = "slug_az";
+        $column = "slug_{$locale}";
 
         // Fetch the blog using the appropriate slug
         $personal = OurTeam::where($column, $slug)->firstOrFail();
@@ -229,8 +228,7 @@ class PageController extends Controller
         // Dynamic blog URLs
         $blogUrls = Blog::all()->flatMap(function ($blog) use ($languages) {
             return collect($languages)->map(fn($lang) => [
-                'loc' => localized_route('blogDetail', ['slug' => $blog->slug_az], $lang),
-                // 'loc' => localized_route('blogDetail', ['slug' => ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru))], $lang),
+                'loc' => localized_route('blogDetail', ['slug' => ($lang == 'az' ? $blog->slug_az : ($lang == 'en' ? $blog->slug_en : $blog->slug_ru))], $lang),
                 'lastmod' => $blog->updated_at->toAtomString(),
             ]);
         });
@@ -239,8 +237,7 @@ class PageController extends Controller
         // Dynamic our team URLs
         $ourTeamUrls = OurTeam::all()->flatMap(function ($member) use ($baseUrl, $languages) {
             return collect($languages)->map(fn($lang) => [
-                'loc' => localized_route('ourTeamDetail', ['slug' => $member->slug_az], $lang),
-                // 'loc' => localized_route('ourTeamDetail', ['slug' => ($lang == 'az' ? $member->slug_az : ($lang == 'en' ? $member->slug_en : $member->slug_ru))], $lang),
+                'loc' => localized_route('ourTeamDetail', ['slug' => ($lang == 'az' ? $member->slug_az : ($lang == 'en' ? $member->slug_en : $member->slug_ru))], $lang),
                 'lastmod' => $member->updated_at->toAtomString(),
             ]);
         });
@@ -248,8 +245,7 @@ class PageController extends Controller
         // Dynamic course URLs
         $courseUrls = Course::all()->flatMap(function ($course) use ($baseUrl, $languages) {
             return collect($languages)->map(fn($lang) => [
-                'loc' => localized_route('courseDetail', ['slug' => $course->slug_az], $lang),
-                // 'loc' => localized_route('courseDetail', ['slug' => ($lang == 'az' ? $course->slug_az : ($lang == 'en' ? $course->slug_en : $course->slug_ru))], $lang),
+                'loc' => localized_route('courseDetail', ['slug' => ($lang == 'az' ? $course->slug_az : ($lang == 'en' ? $course->slug_en : $course->slug_ru))], $lang),
                 'lastmod' => $course->updated_at->toAtomString(),
             ]);
         });
