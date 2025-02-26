@@ -9,6 +9,7 @@ use App\Models\Course;
 use App\Models\Faq;
 use App\Models\OurTeam;
 use App\Models\PhotoGallery;
+use App\Models\Slider;
 use App\Models\Student;
 use App\Models\VideoGallery;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class PageController extends Controller
         $courses = Course::all();
         $blogs = Blog::latest()->take(3)->get();
         $faqs = Faq::where('type', 'Ümumi suallar')->latest()->take(3)->get();
-        return view('index', compact('courses', 'blogs', 'faqs'));
+        $sliders = Slider::where('status', true)->get();
+        return view('index', compact('courses', 'blogs', 'faqs', 'sliders'));
     }
 
     public function about()

@@ -24,4 +24,5 @@ Route::group([
     $router->resource('students', StudentController::class);
     $router->resource('comment-videos', CommentVideoController::class);
     $router->resource('contacts', ContactController::class);
+    $router->resource('sliders', SliderController::class);
 });
