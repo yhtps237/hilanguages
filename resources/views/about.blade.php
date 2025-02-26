@@ -66,36 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bd-counter-wrapper bd-counter-style-five has-transparent pt-50">
-                    <div class="bd-counter-item">
-                        <div class="bd-counter-content">
-                            <h2><span data-purecounter-duration="1" data-purecounter-end="950" class="purecounter">0</span>+
-                            </h2>
-                            <p>{{ __('messages.about_page_total_courses') }}</p>
-                        </div>
-                    </div>
-                    <div class="bd-counter-item">
-                        <div class="bd-counter-content">
-                            <h2><span data-purecounter-duration="1" data-purecounter-end="3" class="purecounter">0</span>K+
-                            </h2>
-                            <p>{{ __('messages.about_page_student_registered') }}</p>
-                        </div>
-                    </div>
-                    <div class="bd-counter-item">
-                        <div class="bd-counter-content">
-                            <h2><span data-purecounter-duration="1" data-purecounter-end="89" class="purecounter">0</span>+
-                            </h2>
-                            <p>{{ __('messages.about_page_student_trainers') }}</p>
-                        </div>
-                    </div>
-                    <div class="bd-counter-item">
-                        <div class="bd-counter-content">
-                            <h2><span data-purecounter-duration="1" data-purecounter-end="1" class="purecounter">0</span>M+
-                            </h2>
-                            <p>{{ __('messages.about_page_student_graduates') }}</p>
-                        </div>
-                    </div>
-                </div>
+             
             </div>
         </section>
         <!-- Bizim Missiyamız & Vizyonumuz bölməsi sonu -->

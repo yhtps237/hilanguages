@@ -1,7 +1,7 @@
 document.getElementById("whatsappForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Formun standart göndərilməsini dayandırır
+    event.preventDefault(); 
 
-    // Məlumatları götür
+
     var parentName = document.getElementById("parentName").value;
     var studentName = document.getElementById("studentName").value;
     var email = document.getElementById("email").value;
@@ -10,7 +10,7 @@ document.getElementById("whatsappForm").addEventListener("submit", function(even
     var mode = document.getElementById("mode").value;
     var note = document.getElementById("note").value;
 
-    // WhatsApp mesajı üçün formatlaşdırma
+
     var message = "*Yeni Qeydiyyat Məlumatı* %0A%0A" +
         " *Valideyn Adı Soyadı:* " + parentName + "%0A" +
         " *Təhsil Alanın Adı Soyadı:* " + studentName + "%0A" +
