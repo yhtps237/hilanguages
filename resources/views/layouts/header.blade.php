@@ -134,7 +134,7 @@
 
             <div class="bd-header-right">
                 <div class="bd-header-sign-btn">
-                    <a class="bd-btn btn-outline-primary h-40px" href="#">{{ __('messages.menu_item8') }}</a>
+                    <a class="bd-btn btn-outline-primary h-40px" href="https://ebilet.fpay.az/tickets/hedef_kurslari">{{ __('messages.menu_item8') }}</a>
                     <a class="bd-btn btn-outline-border-primary h-40px"
                         href="{{ localized_route('register', [], app()->getLocale()) }}">{{ __('messages.menu_item9') }}</a>
                 </div>

@@ -10326,6 +10326,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .bd-header-top {
     background-color: var(--bd-primary);
     padding: 10px 100px;
+    margin-top: -24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14865,7 +14866,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 /*----------------------------------------*/
 
 .bd-coming-soon-content {
-    background: rgba(7, 161, 105, 0.3);
+    background: #000000;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0px);
